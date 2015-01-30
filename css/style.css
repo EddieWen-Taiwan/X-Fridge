@@ -817,7 +817,7 @@
 	{
 		position: relative;
 		margin: 0;
-		background-image: url('../images/header.jpg');
+		background-image: url('../images/header.png');
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -833,6 +833,7 @@
 			#header header h1
 			{
 				font-size: 3em;
+				font-weight: bold;
 				line-height: 1.25em;
 				margin-bottom: 0;
 			}
@@ -1045,12 +1046,10 @@
 
 	.f-left {
 		float: left;
-		margin-left: 0px !important;
 	}
 
 	.f-right {
 		float: right;
-		margin-right: 0px !important;
 	}
 
 	.clear {
@@ -1062,21 +1061,22 @@
 	}
 
 	.intro-wrapper .intro-section {
-		width: 80%;
+		width: 70%;
 		margin: 0px auto;
 		margin-bottom: 20px;
 	}
 
 	.intro-wrapper .intro-section img {
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 		margin-left: 50px;
-		margin-right: 50px;
+		margin-right: 80px;
 	}
 
 	.intro-wrapper .intro-section .content {
-		width: 70%;
-		height: 150px;
+		width: 65%;
+		height: 130px;
+		margin-top: 10px;
 		text-align: left;
 		font-size: 16px;
 	}
