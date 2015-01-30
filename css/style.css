@@ -818,7 +818,7 @@
 		position: relative;
 		margin: 0;
 		background-image: url('../images/header.jpg');
-		background-size: 100% auto;
+		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
 		padding: 14em 0 14em 0;
@@ -905,13 +905,8 @@
 			
 			.main > .content.style1
 			{
-				/*background-color: #707070;*/
-				background: -webkit-linear-gradient(180deg, #858585 55%, #ffffff 90%);
-				background:    -moz-linear-gradient(180deg, #858585 55%, #ffffff 90%);
-				background:     -ms-linear-gradient(180deg, #858585 55%, #ffffff 90%);
-				background:      -o-linear-gradient(180deg, #858585 55%, #ffffff 90%);
-				background:         linear-gradient(180deg, #858585 55%, #ffffff 90%);
-				padding-bottom: 450px;
+				background-image: url(../images/gradient_85.png);
+				padding-bottom: 1px;
 			}
 
 			.main > .content.style2
@@ -983,8 +978,12 @@
 	}
 
 	#header {
-		padding: 12em 0px;
+		padding: 9em 0px;
 		height: 80vh;
+	}
+
+	#first .content .container {
+		margin-bottom: 250px;
 	}
 
 	#first .content h2 {
@@ -994,6 +993,11 @@
 	#first .content .row .balloon {
 		width: 100%;
 		margin-bottom: 30px;
+	}
+
+	#second {
+		padding-bottom: 140px;
+		background-color: white;
 	}
 
 	#second header .container {
@@ -1007,17 +1011,12 @@
 
 	#third {
 		background-image: url(../images/woman.png);
-		background-size: auto 100%;
+		background-size: cover;
 	}
 
 	#third > header,
 	#third > .content.style3 {
 		background: transparent;
-	}
-
-	#third header h2 {
-		/*color: white;*/
-		/*margin-top: 450px;*/
 	}
 
 	.f-left {
