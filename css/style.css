@@ -905,11 +905,13 @@
 			
 			.main > .content.style1
 			{
-				background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Chrome 10+, Saf5.1+ */
-				background:    -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* FF3.6+ */
-				background:     -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* IE10 */
-				background:      -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Opera 11.10+ */
-				background:         linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* W3C */
+				/*background-color: #707070;*/
+				background: -webkit-linear-gradient(180deg, #858585 55%, #ffffff 90%);
+				background:    -moz-linear-gradient(180deg, #858585 55%, #ffffff 90%);
+				background:     -ms-linear-gradient(180deg, #858585 55%, #ffffff 90%);
+				background:      -o-linear-gradient(180deg, #858585 55%, #ffffff 90%);
+				background:         linear-gradient(180deg, #858585 55%, #ffffff 90%);
+				padding-bottom: 450px;
 			}
 
 			.main > .content.style2
@@ -998,16 +1000,19 @@
 	}
 
 	#third header {
-		background: -webkit-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Chrome 10+, Saf5.1+ */
-		background:    -moz-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* FF3.6+ */
-		background:     -ms-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* IE10 */
-		background:      -o-linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* Opera 11.10+ */
-		background:         linear-gradient(90deg, #F09819 10%, #EDDE5D 90%); /* W3C */
+		/*padding-top: 450px;*/
+		background: -webkit-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		background:    -moz-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		background:     -ms-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		background:      -o-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		background:         linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		/* EDDE5D */
 		color: white;
 	}
 
 	#third header h2 {
 		color: white;
+		margin-top: 450px;
 	}
 
 	.f-left {
