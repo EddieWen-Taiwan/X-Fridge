@@ -975,10 +975,6 @@
 /* Eddie                                                                        */
 /*********************************************************************************/
 
-	header .container #carrot {
-		width: 150px;
-	}
-
 	#header {
 		padding: 9em 0px;
 		height: 80vh;
@@ -990,6 +986,28 @@
 
 	#first .content .container {
 		margin-bottom: 250px;
+	}
+
+	#first .container .box {
+		position: relative;
+		height: 150px;
+	}
+
+	#first .container .box #carrot {
+		width: 150px;
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		margin-left: -75px;
+
+		-webkit-transition: all 0.5s;
+		   -moz-transition: all 0.5s;
+			 -o-transition: all 0.5s;
+				transition: all 0.5s;
+	}
+
+	#first .container .box #carrot:hover {
+		top: -20px;
 	}
 
 	#first .content h2 {
