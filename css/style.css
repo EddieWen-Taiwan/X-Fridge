@@ -1000,10 +1000,10 @@
 		left: 50%;
 		margin-left: -75px;
 
-		-webkit-transition: all 0.5s;
-		   -moz-transition: all 0.5s;
-			 -o-transition: all 0.5s;
-				transition: all 0.5s;
+		-webkit-transition: top 0.5s;
+		   -moz-transition: top 0.5s;
+			 -o-transition: top 0.5s;
+				transition: top 0.5s;
 	}
 
 	#first .container .box #carrot:hover {
