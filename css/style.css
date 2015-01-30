@@ -984,6 +984,10 @@
 		height: 80vh;
 	}
 
+	.main#first > header {
+		padding: 3em 0px;
+	}
+
 	#first .content .container {
 		margin-bottom: 250px;
 	}
