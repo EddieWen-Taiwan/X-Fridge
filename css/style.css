@@ -832,7 +832,7 @@
 		
 			#header header h1
 			{
-				font-size: 2.25em;
+				font-size: 3em;
 				line-height: 1.25em;
 				margin-bottom: 0;
 			}
@@ -987,6 +987,7 @@
 	}
 
 	#first .content .row .balloon {
+		width: 100%;
 		margin-bottom: 30px;
 	}
 
@@ -1000,19 +1001,19 @@
 	}
 
 	#third header {
-		/*padding-top: 450px;*/
-		background: -webkit-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		/*background: -webkit-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
 		background:    -moz-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
 		background:     -ms-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
 		background:      -o-linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
-		background:         linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);
+		background:         linear-gradient( 180deg, #ffffff 10%, #f0aa19 55%);*/
+		background-image: url(../images/woman.png);
 		/* EDDE5D */
-		color: white;
+		/*color: white;*/
 	}
 
 	#third header h2 {
-		color: white;
-		margin-top: 450px;
+		/*color: white;*/
+		/*margin-top: 450px;*/
 	}
 
 	.f-left {
@@ -1055,7 +1056,7 @@
 
 	.intro-wrapper .intro-section .content h3 {
 		font-size: 20px;
-		color: white;
+		/*color: white;*/
 	}
 
 	#fourth .container .per {
