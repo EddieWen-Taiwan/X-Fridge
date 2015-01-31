@@ -36,7 +36,8 @@ window.tool = {
 
 			case "food":
 				food_arr.push(value);
-	        	localStorage["food"] = JSON.stringify(food_arr);
+				food = JSON.stringify(food_arr);
+	        	localStorage["food"] = food;
 	        	return true;
 			break;
 
@@ -90,7 +91,11 @@ window.tool = {
 
 tool.tutorialStart = function () {
 	$('<div class="step1"></div>').appendTo($('#left-part'));
+	$('#left-part .add-item').on( 'click', function(){
+		$('.step1').remove();
+	});
 };
+
 
 function supportLocalStorage(){
 	if(!localStorage){
