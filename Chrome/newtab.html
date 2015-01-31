@@ -8,13 +8,38 @@
 	<title>X-Fridge</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="assets/newtab/style.css">
+	<link rel="stylesheet" href="assets/newtab/css/style.css">
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="assets/newtab/app.js"></script>
 </head>
 
 <body>
-	<h1>1111</h1>
+	<div id="left-part">
+		<div id="info">
+			<div>
+				<span id="today">Today </span><span class="date"></span>
+			</div>
+			<div>
+				<span>Hello </span><span class="name"></span>
+			</div>
+		</div>
+		<div id="list">
+			<div id="add">
+				<div><span>NAME: </span><span id="food_name"></span>
+				</div>
+				<div><span>EXPD: <input type="date"></span>
+				</div>
+				<div><span>TYPE: <select><option>Egg</option><option>Meat</option><option>Veg</option></select></span>
+				</div>
+			</div>
+			<div id="food-list">
+
+			</div>
+		</div>
+	</div>
+	<div id="right-part">
+
+	</div>
 </body>
 
 </html>
