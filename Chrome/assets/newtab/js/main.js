@@ -25,7 +25,8 @@ $(function () {
 				tool.write( "username", name );
 				INFO.updateName();
 
-				$(this).remove();
+				$(this).addClass('animated bounceOut');
+				// $(this).remove();
 			}
 		});
 	}
