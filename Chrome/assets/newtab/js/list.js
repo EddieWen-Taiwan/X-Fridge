@@ -26,6 +26,7 @@ function LIST_ADD(parent) {
 			type: self.food_type.attr('src')
 		};
 		self.addItem(item);
+		self.parent.LIST_UL.getnotice();
 	});
 	return self;
 }
@@ -102,16 +103,19 @@ LIST_UL.prototype.getnotice = function () {
 
 	});
 	console.log(item);
+	$('#notice').find('ul').empty();
 	for (var i = item.length - 1; i > item.length - 6 && i >= 0 ; i--) {
 		var expire = new Date(item[i]['expire']);
 		var today = new Date();
 		var remain = (expire - today) / (24*60*60*1000);
 		if(remain < 3 && remain > 0){
+			console.log("almost");
 			$('#notice').css('display', 'block');
 			var month = expire.getMonth() + 1;
 			var date = expire.getDate();
 			$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
 		}else if(remain < 0){
+			console.log("expired");
 			$('#notice').css('display', 'block');
 			var month = expire.getMonth() + 1;
 			var date = expire.getDate();
