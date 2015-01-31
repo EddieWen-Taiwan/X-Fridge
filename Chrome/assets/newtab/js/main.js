@@ -8,14 +8,14 @@ $(function () {
 	$('#left-part .my-list').on( 'click', function(){
 		var list = $('#left-part .list_block');
 		if( list.hasClass('hide') ) {
-			list.css( 'height', 'auto' );
-			var thisHeight = list.height();
-			list.css( 'height', '0px' ).animate( function(){
-				list.css( 'height', thisHeight );
+			$('#left-part .list_block').css( 'height', 'auto' );
+			var thisHeight = $('#left-part .list_block').height();
+			$('#left-part .list_block').css( 'height', '0px' ).animate({
+				'height': thisHeight
 			}, 700);
 		} else {
-			list.animate( function(){
-				list.css( 'height', '0px' );
+			list.animate({
+				'height': '0px'
 			}, 700);
 		}
 	});
