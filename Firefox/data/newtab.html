@@ -14,9 +14,12 @@
 	<link rel="stylesheet" href="libs/pure/pure-min.css">
 	<link rel="stylesheet" href="assets/newtab/css/style.css">
 	<link rel="stylesheet" href="assets/newtab/css/fridge.css">
+	<link rel="stylesheet" href="assets/newtab/css/tutorial.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-
+	<link ref="stylesheet" href="libs/jqueryui/themes/base/all.css">
+	
 	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/jqueryui/jquery-ui.min.js"></script>
 	<script src="assets/newtab/app.js"></script>
 
 </head>
@@ -24,66 +27,54 @@
 <body>
 	<div class="container">
 		<div id="left-part">
-			<div id="info">
-				<div class="info-title">
-					<span id="today">Today </span><span class="date"></span>
+			<div class="today"><span class="month"></span> / <span class="date"></span></div>
+			<div class="pure-button add-item"> + item</div>
+				<div class="add-form hide" id="add">
+					<div class="per">
+						<div class="name">NAME: </div>
+						<input type="text" class="food_name" placeholder="food" />
+					</div>
+					<div class="per">
+						<div class="name">EXPD: </div>
+						<input type="date" class="food_date" placeholder="expire" />
+					</div>
+					<div class="per">
+						<div class="name">QUAN: </div>
+						<input type="number" class="food_quantity" placeholder="quantity" />
+					</div>
+					<div class="per">
+						<div class="name">TYPE: </div>
+						<img class="food_type" src="assets/newtab/images/food_type/t1.png">
+						<div class="food_types">
+						</div>
+					</div>
+					<div class="pure-button add_item">SAVE</div>
 				</div>
-				<!-- <div>
-					<span>Hello </span><span class="name"></span>
-				</div> -->
-			</div>
-			<div id="list" class="pure-form pure-form-aligned">
-				<div id="add">
-					<fieldset>
-						<div class="per pure-control-group">
-							<label>NAME: </label>
-							<input class="food_name" />
-						</div>
-						<div class="per pure-control-group">
-							<label>EXPD: </label>
-							<input class="food_date" type="date">
-						</div>
-						<div class="per pure-control-group">
-							<label>QUAN: </label>
-							<input class="food_quantity" type="number">
-						</div>
-						<div class="per pure-control-group">
-							<label>TYPE: </label>
-							<select class="food_type">
-								<option>Egg</option>
-								<option>Meat</option>
-								<option>Veg</option>
-							</select>
-						</div>
-					</fieldset>
-					<button class="add_item pure-button">Save</button>
-				</div>
-				<div id="food-list">
-					<!-- <div class="bu"></div> -->
-					<ul class="food_list">
+			<div class="pure-button my-list"> My List</div>
+				<div class="list_block hide">
+					<div class="wrapper">
+					<ul>
 						<!-- <li><div class="box">
-								<div class="food">雞蛋</div>
-								<div class="num">x 5</div>	
-								<div class="days">6 days</div>
-								<div class="delete">－</div>
+							<div class="food">雞蛋</div>
+							<div class="num">x 5</div>
+							<div class="days">6 days</div>
+							<div class="delete">－</div>
 						</div></li> -->
 					</ul>
+					</div>
 				</div>
-			</div>
 		</div>
 
 		<div id="right-part">
 			<div class="fridge">
-				<div class="fridge-up"></div>
-				<div class="fridge-down"></div>
-				<div class="fridge-down-open">
-					<div class="fridge-layers">
-						<div class="fridge-layer"></div>
-						<div class="fridge-layer"></div>
-					</div>
-					<div class="fridge-open"></div>
-				</div>
 			</div>
+		</div>
+
+		<div id="notice">
+			<div id="notice_title">Notice</div>
+			<ul>
+
+			</ul>
 		</div>
 
 		<div id="askOverlay" class="v-mid hidden">

@@ -19,3 +19,18 @@
 .fridge > div > img {
 	display: block;
 }
+
+.fridge > div > span {
+	opacity: 0;
+}
+
+.fridge > div > span.health {
+	background-color: red;
+	width: 100%;
+	height: 10px;
+	display: inline-block;
+}
+
+.fridge > div > span.show {
+	opacity: 1;
+}

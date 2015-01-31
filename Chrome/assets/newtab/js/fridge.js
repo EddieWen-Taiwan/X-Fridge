@@ -22,44 +22,36 @@ FRIDGE.prototype.putFood = function () {
 	});
 	for (i = 0; i < max; i += 1) {
 		var item = food[i];
-		var ele = $('<div><img><span></span></div>');
-		if (item.top && item.left)
-			ele.css({
-				"top": item.top,
-				"left": item.left
-			});
-		ele.attr('index', i);
-		ele.find('img').attr('src', item.type).hover(
-			function () {
-				$(this).siblings('span').show()
-			},
-			function () {
-				$(this).siblings('span').hide()
-			}
-		);
-		ele.find('span').text(item.name).hide();
-		ele.draggable();
-		self.UI.append(ele);
+		self.createItem(item, i);
 	}
 };
 FRIDGE.prototype.putItem = function (item) {
 	var self = this;
-	var ele = $('<div><img><span></span></div>');
+	self.createItem(item, food_arr.length - 1);
+};
+FRIDGE.prototype.createItem = function (item, index) {
+	var self = this;
+	var ele = $('<div><span class="health"></span><img><span class="name"></span></div>');
 	if (item.top && item.left)
 		ele.css({
 			"top": item.top,
 			"left": item.left
 		});
-	ele.attr('index', food_arr.length-1);
+	ele.attr('index', index);
 	ele.find('img').attr('src', item.type).hover(
 		function () {
-			$(this).siblings('span').show()
+			$(this).siblings('span').addClass('show')
 		},
 		function () {
-			$(this).siblings('span').hide()
+			$(this).siblings('span').removeClass('show')
 		}
 	);
-	ele.find('span').text(item.name).hide();
+	var exp = item.expire;
+	var now = new Date().stringFormat();
+	var buy = item.buydate;
+	var perc = tool.getDiffDays(now,exp) / tool.getDiffDays(buy, exp);
+	ele.find('span.health').width(perc*100+"%");
+	ele.find('span.name').text(item.name);
 	ele.draggable();
 	self.UI.append(ele);
 };
