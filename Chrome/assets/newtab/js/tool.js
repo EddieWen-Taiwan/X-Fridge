@@ -69,6 +69,21 @@ window.tool = {
 		else
 			remain_days = Math.round( parseInt(remain_days) ) + " days";
 		return remain_days;
+	},
+	update:function(key, index, obj){
+		switch(key){
+			case "food":
+				food_arr[index]['top'] = obj['top'];
+				food_arr[index]['left'] = obj['left'];
+				food = JSON.stringify(food_arr);
+				localStorage['food'] = food;
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+
 	}
 
 };
