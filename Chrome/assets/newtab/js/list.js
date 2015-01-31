@@ -23,7 +23,7 @@ function LIST_ADD(parent) {
 			buydate: new Date().stringFormat(),
 			expire: self.food_date.val(),
 			quantity: self.food_quantity.val(),
-			type: self.food_type.val()
+			type: self.food_type.attr('src')
 		};
 		self.addItem(item);
 	});
@@ -40,9 +40,8 @@ LIST_ADD.prototype.clearItem = function () {
 	var self = this;
 	self.food_name.val('');
 	self.food_date.val('');
-	self.food_type.val('');
+	self.food_type.attr('src','assets/newtab/images/food_type/t1.png');
 	self.food_quantity.val('');
-
 };
 
 function LIST_UL(parent) {
@@ -98,7 +97,7 @@ LIST_UL.prototype.getnotice = function () {
 				rank_arr.splice(i, 1, v['expire']);
 
 				break;
-			}	
+			}
 		}
 		self.addItem(v);
 	});

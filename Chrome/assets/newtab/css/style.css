@@ -147,8 +147,6 @@ body {
 	overflow-y: auto;
 
 	-webkit-transition: all 0.7s;
-	   -moz-transition: all 0.7s;
-		 -o-transition: all 0.7s;
 			transition: all 0.7s;
 }
 
@@ -229,6 +227,33 @@ body {
 	margin-top: 30px;
 	text-align: center;
 	display: block;
+}
+
+#left-part .food_type, #left-part .food_types img {
+	width: 25px;
+	height: 25px;
+	margin: 4px;
+}
+
+#left-part .food_types {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 150px;
+	width: 200px;
+	margin: auto;
+	display: none;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px black solid;
+}
+#left-part .food_types.show {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 #right-part {

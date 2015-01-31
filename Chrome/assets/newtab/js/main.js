@@ -24,6 +24,20 @@ $(function () {
 			}, 700).addClass('hide');
 		}
 	});
+	
+	var types_container =  $('#left-part .food_types');
+	for(var i = 1; i < 25; i+=1){
+		var $img = $('<img>');
+		$img.attr('src', 'assets/newtab/images/food_type/t'+i+".png");
+		types_container.append($img);
+	}
+	types_container.on('click', 'img', function(e){
+		$('#left-part .food_type').attr('src', $(this).attr('src'));
+		
+	});
+	$('#left-part .food_type').on('click', function(){
+		$('#left-part .food_types').toggle('show');
+	});
 
 	function start() {
 
