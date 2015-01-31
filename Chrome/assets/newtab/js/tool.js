@@ -73,7 +73,7 @@ window.tool = {
 
 };
 tool.tutorialStart = function () {
-	$('<div class="step1">123</div>').appendTo($('#left-part'));
+	$('<div class="step1"></div>').appendTo($('#left-part'));
 };
 
 function supportLocalStorage(){
