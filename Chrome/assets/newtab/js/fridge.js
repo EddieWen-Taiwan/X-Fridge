@@ -44,4 +44,22 @@ FRIDGE.prototype.putFood = function () {
 };
 FRIDGE.prototype.putItem = function (item) {
 	var self = this;
+	var ele = $('<div><img><span></span></div>');
+	if (item.top && item.left)
+		ele.css({
+			"top": item.top,
+			"left": item.left
+		});
+	ele.attr('index', food_arr.length-1);
+	ele.find('img').attr('src', item.type).hover(
+		function () {
+			$(this).siblings('span').show()
+		},
+		function () {
+			$(this).siblings('span').hide()
+		}
+	);
+	ele.find('span').text(item.name).hide();
+	ele.draggable();
+	self.UI.append(ele);
 };

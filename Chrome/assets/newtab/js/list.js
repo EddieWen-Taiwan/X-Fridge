@@ -35,6 +35,7 @@ LIST_ADD.prototype.addItem = function (item) {
 	tool.write('food', item);
 	self.clearItem();
 	self.parent.UL.addItem(item);
+	FRIDGE.putItem(item);
 };
 LIST_ADD.prototype.clearItem = function () {
 	var self = this;
@@ -101,7 +102,7 @@ LIST_UL.prototype.getnotice = function () {
 
 	});
 	console.log(item);
-	for (var i = item.length - 1; i > item.length - 5 && i >= 0 ; i--) {
+	for (var i = item.length - 1; i > item.length - 6 && i >= 0 ; i--) {
 		var expire = new Date(item[i]['expire']);
 		var today = new Date();
 		var remain = (expire - today) / (24*60*60*1000);
