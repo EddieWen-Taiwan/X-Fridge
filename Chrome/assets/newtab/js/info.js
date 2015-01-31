@@ -4,13 +4,15 @@ function INFO() {
 	self.name = self.UI.find('.name');
 	self.date = self.UI.find('.date');
 	return self;
-};
+}
 
-INFO.prototype.updateName = function (name) {
+INFO.prototype.updateName = function () {
 	var self = this;
+	var name = tool.read('username') || 'Stranger';
 	self.name.text(name);
 	return self;
 };
+
 INFO.prototype.updateDate = function () {
 	var self = this;
 	var now = new Date();
