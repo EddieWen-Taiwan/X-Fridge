@@ -138,8 +138,7 @@ body {
 	background-color: rgba( 0, 0, 0, 0.7 );
 }
 
-#left-part .add-form,
-#left-part .list_block {
+#left-part .add-form {
 	height: 250px;
 	padding: 15px 15px;
 	color: white;
@@ -153,6 +152,19 @@ body {
 }
 
 #left-part .add-form.hide {
+	height: 0px;
+	padding: 0px 15px;
+}
+
+#left-part .list_block {
+	/*height: 250px;*/
+	padding: 15px 15px;
+	color: white;
+	background-color: rgba( 0, 0, 0, 0.4 );
+	overflow: hidden;
+}
+
+#left-part .list_block.hide {
 	height: 0px;
 	padding: 0px 15px;
 }

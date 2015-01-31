@@ -5,6 +5,21 @@ $(function () {
 		$('#left-part .add-form').hasClass('hide') ? $('#left-part .add-form').removeClass('hide') : $('#left-part .add-form').addClass('hide');
 	});
 
+	$('#left-part .my-list').on( 'click', function(){
+		var list = $('#left-part .list_block');
+		if( list.hasClass('hide') ) {
+			list.css( 'height', 'auto' );
+			var thisHeight = list.height();
+			list.css( 'height', '0px' ).animate( function(){
+				list.css( 'height', thisHeight );
+			}, 700);
+		} else {
+			list.animate( function(){
+				list.css( 'height', '0px' );
+			}, 700);
+		}
+	});
+
 	function start() {
 
 		if( IsThisFirstTime() ) {
