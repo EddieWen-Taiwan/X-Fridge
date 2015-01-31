@@ -198,13 +198,17 @@ body {
 
 #food-list .box .food {
 	width: 25%;
+}
+
+#food-list .box .num {
+	width: 10%;
 	margin-right: 10%;
 }
 
 #food-list .box .days {
 	width: 20%;
 	margin-left: 5%;
-	margin-right: 20%;
+	margin-right: 10%;
 	color: #d4d4d4;
 }
 
