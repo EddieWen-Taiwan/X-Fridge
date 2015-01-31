@@ -66,7 +66,7 @@ window.tool = {
 		if(remain_days < 1 && remain_days > 0) 
 			remain_days = "即將過期";
 		else if(remain_days < 0)
-			remain_days = "已經過期囉....";
+			remain_days = "已經過期";
 		else
 			remain_days = Math.round( parseInt(remain_days) ) + " days";
 		return remain_days;
