@@ -100,10 +100,10 @@ body {
 
 #left-part {
 	position: absolute;
-	top: 13vh;
+	top: 5vh;
 	left: 50px;
 	width: 360px;
-	height: 74vh;
+	height: 80vh;
 	border-radius: 10px;
 	padding: 20px;
 	background-color: rgba( 0, 0, 0, 0.75 );
@@ -153,18 +153,71 @@ body {
 	width: 80px;
 }
 
+#list .per.pure-control-group input {
+	padding: 5px 10px;
+}
+
 #list .per.pure-control-group select {
 	width: 190px;
 }
 
 #list #add .pure-button {
 	width: 35%;
-	margin-left: 55%;
+	margin-left: 60%;
 }
 
 #food-list {
 	border-top: 1px #c0c0c0 dashed;
 	margin-top: 15px;
+}
+
+#food-list li {
+	height: 30px;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+#food-list .box {
+	width: 320px;
+	height: 30px;
+	/*background-color: red;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#food-list .box > div {
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+}
+
+#food-list .box .food {
+	width: 25%;
+	margin-right: 10%;
+}
+
+#food-list .box .days {
+	width: 20%;
+	margin-left: 5%;
+	margin-right: 20%;
+	color: #d4d4d4;
+}
+
+#food-list .box .delete {
+	margin-left: 5%;
+	width: 24px;
+	height: 24px;
+	border-radius: 24px;
+	line-height: 24px;
+	background-color: #dcdcdc;
+	color: black;
+	cursor: pointer;
+}
+
+#food-list .box .delete:hover {
+	background-color: #e32a00;
+	color: white;
 }
 
 #askOverlay {
