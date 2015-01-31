@@ -1,82 +1,9 @@
 .fridge {
-	width: 400px;
-	height: 600px;
-	border-radius: 10px;
-	position: relative;
-	background-color: white;
-	box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
-.fridge-up {
-	width: 100%;
-	height: 20%;
-	border: 5px solid black;
-	border-bottom: 2.5px solid black;
-	box-sizing: border-box;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-}
-
-.fridge-down {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 80%;
-	border: 5px solid black;
-	border-top: 2.5px solid black;
-	box-sizing: border-box;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.fridge-down.door {
-	-webkit-transition: -webkit-transform 1000ms linear;
-	transition: transform 1000ms linear;
-	-webkit-transform-origin: right;
-	-ms-transform-origin: right;
-	transform-origin: right;
-}
-
-.fridge-layers {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	top: 0;
-	width: 80%;
-	height: 80%;
-	margin: auto;
-	opacity: 0;
-	-webkit-transition: opacity 1000ms linear;
-	transition: opacity 1000ms linear;
-	background-color: #717171;
-}
-
-.fridge-down-holder {
-	width: 5%;
-	height: 60%;
-	float: left;
-	margin-top: 20%;
-	margin-left: 5%;
-	background-color: #5e6979;
-	opacity: 1;
-	-webkit-transition: opacity 1000ms linear;
-	transition: opacity 1000ms linear;
-}
-
-.fridge-down.door.open {
-	-webkit-transform: rotate3d(0, 1, 0, -180deg);
-	transform: rotate3d(0, 1, 0, -180deg);
-}
-
-.fridge-down.open .fridge-down-holder {
-	opacity: 0;
-}
-
-.fridge-down.door.open .fridge-layers {
-	-webkit-transition: opacity 1000ms linear;
-	transition: opacity 1000ms linear;
-	opacity: 1;
+	opacity: 0.8;
+	margin-bottom: 20px;
+	width: 500px;
+	height: 670px;
+	background-image: url(../images/open.png);
+	background-position: center;
+	background-size: cover;
 }

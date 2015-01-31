@@ -1,13 +1,17 @@
-function FRIDGE () {
+function FRIDGE() {
 	var self = this;
 	self.UI = $('#right-part').find('.fridge');
-	self.fridge_down_door = self.UI.find('.fridge-down.door');
-	self.opener = self.UI.find('.fridge-down-holder');
-	self.opener.on('click', self, self.open);
 	return self;
 }
 
-FRIDGE.prototype.open = function (e) {
-	var self = e.data;
-	self.fridge_down_door.toggleClass('open');
+FRIDGE.prototype.putFood = function () {
+	var self = this;
+	var food = JSON.parse('[{"name":"牛小排","buydate":"2015-02-01","quantity":3,"expire":"2015-02-15","type":"t13"}]');
+	var i, max = food.length;
+	for (i = 0; i < max; i += 1) {
+		var item = food[i];
+		var ele = $('<img>');
+		ele.attr('src', './assets/newtab/images/food_type/'+item.type+'.png');
+		self.UI.append(ele);
+	}
 };
