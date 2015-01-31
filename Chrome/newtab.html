@@ -24,52 +24,32 @@
 <body>
 	<div class="container">
 		<div id="left-part">
-			<div id="info">
-				<div class="info-title">
-					<span id="today">Today </span><span class="date"></span>
+			<div class="today"><span class="month">1</span> / <span class="date">31</span></div>
+			<div class="pure-button add-item"> + item</div>
+				<div class="add-form">
+					<div class="per">
+						<div class="name">NAME: </div>
+						<input type="text" class="food_name" placeholder="food" />
+					</div>
+					<div class="per">
+						<div class="name">EXPD: </div>
+						<input type="date" class="food_expd" placeholder="expire" />
+					</div>
+					<div class="per">
+						<div class="name">QUAN: </div>
+						<input type="number" class="food_quan" placeholder="quantity" />
+					</div>
+					<div class="per">
+						<div class="name">TYPE: </div>
+						<select class="food_type">
+							<option value="egg">Egg</option>
+							<option value="meat">Meat</option>
+							<option value="veg">Veg</option>
+						</select>
+					</div>
+					<div class="pure-button save">SAVE</div>
 				</div>
-				<!-- <div>
-					<span>Hello </span><span class="name"></span>
-				</div> -->
-			</div>
-			<div id="list" class="pure-form pure-form-aligned">
-				<div id="add">
-					<fieldset>
-						<div class="per pure-control-group">
-							<label>NAME: </label>
-							<input class="food_name" />
-						</div>
-						<div class="per pure-control-group">
-							<label>EXPD: </label>
-							<input class="food_date" type="date">
-						</div>
-						<div class="per pure-control-group">
-							<label>QUAN: </label>
-							<input class="food_quantity" type="number">
-						</div>
-						<div class="per pure-control-group">
-							<label>TYPE: </label>
-							<select class="food_type">
-								<option>Egg</option>
-								<option>Meat</option>
-								<option>Veg</option>
-							</select>
-						</div>
-					</fieldset>
-					<button class="add_item pure-button">Save</button>
-				</div>
-				<!-- <div class="bu"></div> -->
-				<div id="food-list">
-					<ul class="food_list">
-						<!-- <li><div class="box">
-								<div class="food">雞蛋</div>
-								<div class="num">x 5</div>	
-								<div class="days">6 days</div>
-								<div class="delete">－</div>
-						</div></li> -->
-					</ul>
-				</div>
-			</div>
+			<div class="pure-button my-list"> My List</div>
 		</div>
 
 		<div id="right-part">
