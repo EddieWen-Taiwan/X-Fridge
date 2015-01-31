@@ -2,10 +2,11 @@ $(function () {
 	start();
 
 	function start() {
-console.log( tool.read( "username" ) );
-console.log( IsThisFirstTime() );
+
 		if( IsThisFirstTime() ) {
 			askUserName();
+		} else {
+			$('#askOverlay').remove();
 		}
 
 		window.INFO = new INFO();
@@ -23,6 +24,8 @@ console.log( IsThisFirstTime() );
 				var name = $('#askOverlay input').val();
 				tool.write( "username", name );
 				INFO.updateName();
+
+				$(this).remove();
 			}
 		});
 	}
