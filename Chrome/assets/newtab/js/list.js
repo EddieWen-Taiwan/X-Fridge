@@ -60,6 +60,10 @@ function LIST_UL(parent) {
 	self.parent = parent;
 	self.UI = self.parent.UI.find('#food-list');
 	self.CTN = self.UI.find('.food_list');
+
+	self.CTN.on('click','.delete', function(e){
+		self.deleteItem(this);
+	})
 }
 LIST_UL.prototype.addItem = function (item) {
 	var self = this;
@@ -81,8 +85,10 @@ LIST_UL.prototype.addItem = function (item) {
 	self.CTN.append($li);	
 }
 LIST_UL.prototype.deleteItem = function (item) {
-	var index = $('li').index( $(item).parent );
+	var index = $('li').index( $(item).parent().parent() );
 	tool.remove("food", index);
+	$(item).parent().parent().remove();
+	console.log(index);
 }
 LIST_UL.prototype.readItem = function () {
 	var self = this;
