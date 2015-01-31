@@ -1,0 +1,17 @@
+.fridge {
+	width:300px;
+	height: 500px;
+	background-color: yellow;
+}
+
+.fridge-up {
+	width: 100%;
+	height: 30%;
+	background: black;
+}
+
+.fridge-down {
+	width: 100%;
+	height: 70%;
+	background: white;
+}

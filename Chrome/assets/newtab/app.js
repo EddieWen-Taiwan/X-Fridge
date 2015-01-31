@@ -92,22 +92,27 @@ LIST_UL.prototype.addItem = function (item) {
 	var $li = $('<li></li>');
 	var $name = $('<span></span>');
 	var $days = $('<span></span>');
-	// shipong here
+	var $quantity = $('<span></span>');
+	var $del = $('<span></span>');
+
+	$name.text(item['name']);
+	$days.text(item['days']);
+	$quantity.text(item['quantity']);
+	$del.text(item['del']);
+
+	$li.text($name + $days + $quantity + $del);
+	self.CTN.append($li);	
 };
 $(function () {
 	start();
 
-	$('#askOverlay').keypress( function(e){
-		if( e.keyCode == 13 ) {
-			var name = $('#askOverlay input').val();
-			tool.write( "username", name );
-			INFO.updateName();
-		}
-	});
-
 	function start() {
 
-		askUserName();
+		if( IsThisFirstTime() ) {
+			askUserName();
+		} else {
+			$('#askOverlay').remove();
+		}
 
 		window.INFO = new INFO();
 		window.LIST = new LIST();
@@ -115,12 +120,28 @@ $(function () {
 	}
 
 	function askUserName() {
+		// show the question to ask the username
 		$('#askOverlay').removeClass('hidden');
+
+		// if ENTER be pressed 
+		$('#askOverlay').keypress( function(e){
+			if( e.keyCode == 13 ) {
+				var name = $('#askOverlay input').val();
+				tool.write( "username", name );
+				INFO.updateName();
+
+				$(this).remove();
+			}
+		});
+	}
+
+	function IsThisFirstTime() {
+		return !tool.read( "username" );
 	}
 
 });
 
-window.username = [];
+window.username = '';
 window.food = '';
 window.food_arr = [];
 
