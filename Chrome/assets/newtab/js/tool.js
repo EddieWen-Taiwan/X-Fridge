@@ -1,4 +1,3 @@
-
 window.username = '';
 window.food = '';
 window.food_arr = [];
@@ -15,7 +14,7 @@ window.tool = {
 			break;
 
 			case "food":
-				food = localStorage["food"];
+				food = localStorage["food"] || "[]";
 				food_arr = JSON.parse(food);
 	        	return food_arr;
 			break;
@@ -63,7 +62,7 @@ window.tool = {
 		var expire = new Date(expire_date);
 		var today = new Date();
 		var remain_days = (expire - today) / (1000 * 60 * 60 * 24);
-		if(remain_days < 1 && remain_days > 0) 
+		if(remain_days < 1 && remain_days > 0)
 			remain_days = "即將過期";
 		else if(remain_days < 0)
 			remain_days = "已經過期";
@@ -72,7 +71,7 @@ window.tool = {
 		return remain_days;
 	}
 
-}
+};
 
 function supportLocalStorage(){
 	if(!localStorage){

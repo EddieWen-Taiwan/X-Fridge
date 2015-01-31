@@ -7,16 +7,6 @@ function LIST() {
 	return self;
 }
 
-LIST.prototype.xxx = function () {
-	var self = this;
-	return self;
-};
-
-LIST.prototype.ccc = function () {
-	var self = this;
-	return self;
-};
-
 function LIST_ADD(parent) {
 	var self = this;
 	self.parent = parent;
@@ -82,13 +72,13 @@ LIST_UL.prototype.addItem = function (item) {
 	$li.find('.box').append($quantity);
 	$li.find('.box').append($days);
 	$li.find('.box').append($del);
-	self.CTN.append($li);	
-}
+	self.CTN.append($li);
+};
 LIST_UL.prototype.deleteItem = function (item) {
 	var index = $('li').index( $(item).parent().parent() );
 	tool.remove("food", index);
 	$(item).parent().parent().remove();
-}
+};
 LIST_UL.prototype.readItem = function () {
 	var self = this;
 	var item = tool.read("food");
@@ -96,7 +86,7 @@ LIST_UL.prototype.readItem = function () {
 		self.addItem(v);
 	});
 	self.getnotice();
-}
+};
 LIST_UL.prototype.getnotice = function () {
 	var self = this;
 	var item = tool.read("food");
@@ -109,11 +99,11 @@ LIST_UL.prototype.getnotice = function () {
 
 				break;
 			}	
-		};
+		}
 		self.addItem(v);
 	});
 	console.log(rank_arr);
-}
+};
 
 function shift(array, x, y){
 	var tem = array[x];
