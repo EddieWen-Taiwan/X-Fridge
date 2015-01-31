@@ -3,6 +3,7 @@ $(function () {
 
 	function start() {
 		window.INFO = new INFO();
-		INFO.updateName("YAC").updateDate();
+		window.LIST = new LIST();
+		INFO.updateName().updateDate();
 	}
 })

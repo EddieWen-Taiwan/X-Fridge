@@ -1,24 +1,3 @@
-function INFO() {
-	var self = this;
-	self.UI = $('#info');
-	self.name = self.UI.find('.name');
-	self.date = self.UI.find('.date');
-	return self;
-}
-
-INFO.prototype.updateName = function () {
-	var self = this;
-	var name = tool.read('username') || 'Stranger';
-	self.name.text(name);
-	return self;
-};
-
-INFO.prototype.updateDate = function () {
-	var self = this;
-	var now = new Date();
-	self.date.text(now.getMonth() + 1 + "/" + now.getDate());
-	return self;
-};
 function LIST() {
 	var self = this;
 	self.UI = $('#list');
@@ -72,12 +51,3 @@ LIST_ADD.prototype.clearItem = function () {
 	self.food_type.val('');
 	self.food_quantity.val('');
 };
-$(function () {
-	start();
-
-	function start() {
-		window.INFO = new INFO();
-		window.LIST = new LIST();
-		INFO.updateName().updateDate();
-	}
-})
