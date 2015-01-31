@@ -11,6 +11,7 @@ $(function () {
 
 		window.INFO = new INFO();
 		window.LIST = new LIST();
+		window.FRIDGE = new FRIDGE();
 		INFO.updateName().updateDate();
 	}
 
