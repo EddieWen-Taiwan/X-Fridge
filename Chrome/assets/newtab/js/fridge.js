@@ -1,7 +1,7 @@
 function FRIDGE () {
 	var self = this;
 	self.UI = $('#right-part').find('.fridge');
-	self.fridge_down_open = self.UI.find('.fridge-down-open');
+	self.fridge_down_door = self.UI.find('.fridge-down.door');
 	self.opener = self.UI.find('.fridge-down-holder');
 	self.opener.on('click', self, self.open);
 	return self;

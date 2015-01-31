@@ -66,7 +66,7 @@
 	transition: opacity 1000ms linear;
 }
 
-.fridge-down-open.open {
+.fridge-down.door.open {
 	-webkit-transform: rotate3d(0, 1, 0, -180deg);
 	transform: rotate3d(0, 1, 0, -180deg);
 }
