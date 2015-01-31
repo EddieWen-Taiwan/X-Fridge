@@ -90,6 +90,9 @@ window.tool = {
 
 tool.tutorialStart = function () {
 	$('<div class="step1"></div>').appendTo($('#left-part'));
+	$('#left-part .add-item').on( 'click', function(){
+		$('.step1').remove();
+	});
 };
 
 function supportLocalStorage(){
