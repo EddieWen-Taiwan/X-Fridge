@@ -64,5 +64,14 @@ LIST_UL.prototype.addItem = function (item) {
 	var $li = $('<li></li>');
 	var $name = $('<span></span>');
 	var $days = $('<span></span>');
-	// shipong here
+	var $quantity = $('<span></span>');
+	var $del = $('<span></span>');
+
+	$name.text(item['name']);
+	$days.text(item['days']);
+	$quantity.text(item['quantity']);
+	$del.text(item['del']);
+
+	$li.text($name + $days + $quantity + $del);
+	self.CTN.append($li);	
 };
