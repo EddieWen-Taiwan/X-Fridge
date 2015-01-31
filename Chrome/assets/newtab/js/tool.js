@@ -61,3 +61,11 @@ window.tool = {
 	}
 
 }
+
+function supportLocalStorage(){
+	if(!localStorage){
+		return false;
+	}else{
+		return true;
+	}
+}
