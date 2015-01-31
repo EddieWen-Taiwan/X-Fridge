@@ -89,24 +89,26 @@ LIST_UL.prototype.readItem = function () {
 LIST_UL.prototype.getnotice = function () {
 	var self = this;
 	var item = tool.read("food");
-	var rank_arr = new Array(5);
+	// var rank_arr = new Array(5);
 	item.forEach(function(v, i){
-		for (var i = 5; i >= 0 && i <= 5 ; i--) {
-			if(rank_arr[i] == null || v['expire'] > rank_arr[i]['expire']){
-				console.log(v['expire']);
-				rank_arr.splice(i, 1, v['expire']);
-
-				break;
+		for (var j = 0; j <= item.length - i - 1; j++) {
+			if(item[j+1] && item[j]['expire'] > item[j+1]['expire']){
+				shift(item, i, j);
 			}
-		}
-		self.addItem(v);
+			
+		};
+
 	});
-	console.log(rank_arr);
+	console.log(item);
+	for (var i = item.length ; i > item.length - 5 && i >= 0 ; i--) {
+		
+	};
 };
 
 function shift(array, x, y){
 	var tem = array[x];
 	array[x] = array[y];
 	array[y] = tem;
+	return array;
 }
 

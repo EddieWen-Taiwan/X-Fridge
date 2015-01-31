@@ -10,19 +10,20 @@ $(function () {
 	});
 
 	$('#left-part .my-list').on( 'click', function(){
-		var list = $('#left-part .list_block');
-		if( list.hasClass('hide') ) {
-			list.css( 'height', 'auto' );
-			var thisHeight = list.height();
-			list.css( 'height', '0px' ).animate({
-				'height': thisHeight
-			}, 700).removeClass('hide');
-			$('#left-part .add-form').hasClass('hide') ? list.css( 'max-height', windowH -210 ) : list.css( 'max-height', windowH -490 );
-		} else {
-			list.animate({
-				'height': '0px'
-			}, 700).addClass('hide');
-		}
+		// var list = $('#left-part .list_block');
+		// if( list.hasClass('hide') ) {
+		// 	list.css( 'height', 'auto' );
+		// 	var thisHeight = list.height();
+		// 	list.css( 'height', '0px' ).animate({
+		// 		'height': thisHeight
+		// 	}, 700).removeClass('hide');
+		// 	$('#left-part .add-form').hasClass('hide') ? list.css( 'max-height', windowH -210 ) : list.css( 'max-height', windowH -490 );
+		// } else {
+		// 	list.animate({
+		// 		'height': '0px'
+		// 	}, 700).addClass('hide');
+		// }
+		$('#left-part .list_block').hasClass('hide') ? $('#left-part .list_block').removeClass('hide') : $('#left-part .list_block').addClass('hide');
 	});
 	
 	var types_container =  $('#left-part .food_types');
