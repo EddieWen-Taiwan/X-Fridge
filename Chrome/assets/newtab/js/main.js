@@ -3,7 +3,7 @@ $(function () {
 
 	$('#askOverlay').keypress( function(e){
 		if( e.keyCode == 13 ) {
-			var name = $('#askOverlay').val();
+			var name = $('#askOverlay input').val();
 			console.log( name );
 		}
 	});
