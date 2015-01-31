@@ -50,6 +50,8 @@ FRIDGE.prototype.createItem = function (item, index) {
 	var now = new Date().stringFormat();
 	var buy = item.buydate;
 	var perc = tool.getDiffDays(now,exp) / tool.getDiffDays(buy, exp);
+	if(perc < 0.3)
+		ele.addClass('dying');
 	ele.find('span.health').width(perc*100+"%");
 	ele.find('span.name').text(item.name);
 	ele.draggable();

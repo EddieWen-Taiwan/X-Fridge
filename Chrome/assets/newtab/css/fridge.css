@@ -14,8 +14,8 @@
 	left: 250px;
 	display: inline-block;
 	max-width: 60px;
-	
 }
+
 .fridge > div > img {
 	display: block;
 }
@@ -31,6 +31,27 @@
 	display: inline-block;
 }
 
+.fridge > div > span.name {
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
 .fridge > div > span.show {
 	opacity: 1;
+}
+
+.fridge > div.dying {
+	-webkit-animation: dying 1s infinite;
+	animation: dying 1s infinite;
+}
+
+@-webkit-keyframes dying {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+@keyframes dying {
+	from {opacity: 0;}
+	to {opacity: 1;}
 }
