@@ -58,6 +58,18 @@ window.tool = {
 			break;
 
 		}
+	},
+	ifexpired:function(expire_date){
+		var expire = new Date(expire_date);
+		var today = new Date();
+		var remain_days = (expire - today) / (1000 * 60 * 60 * 24);
+		if(remain_days < 1 && remain_days > 0) 
+			remain_days = "即將過期";
+		else if(remain_days < 0)
+			remain_days = "已經過期囉....";
+		else
+			remain_days = Math.round( parseInt(remain_days) ) + " days";
+		return remain_days;
 	}
 
 }

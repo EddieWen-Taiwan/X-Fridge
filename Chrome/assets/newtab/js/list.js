@@ -3,6 +3,7 @@ function LIST() {
 	self.UI = $('#list');
 	self.ADD = new LIST_ADD(self);
 	self.UL = new LIST_UL(self);
+	self.UL.readItem();
 	return self;
 }
 
@@ -43,7 +44,7 @@ LIST_ADD.prototype.addItem = function (item) {
 	var self = this;
 	tool.write('food', item);
 	self.clearItem();
-
+	self.parent.UL.addItem(item);
 };
 LIST_ADD.prototype.clearItem = function () {
 	var self = this;
@@ -51,31 +52,42 @@ LIST_ADD.prototype.clearItem = function () {
 	self.food_date.val('');
 	self.food_type.val('');
 	self.food_quantity.val('');
+
 };
 
 function LIST_UL(parent) {
 	var self = this;
 	self.parent = parent;
 	self.UI = self.parent.UI.find('#food-list');
-
+	self.CTN = self.UI.find('.food_list');
 }
 LIST_UL.prototype.addItem = function (item) {
 	var self = this;
-	var $li = $('<li></li>');
-	var $name = $('<span></span>');
-	var $days = $('<span></span>');
-	var $quantity = $('<span></span>');
-	var $del = $('<span></span>');
+	var $li = $('<li><div class="box"></div></li>');
+	var $name = $('<div class="food"></div>');
+	var $days = $('<div class="days"></div>');
+	var $quantity = $('<div class="num"></div>');
+	var $del = $('<div class="delete">－</div>');
 
 	$name.text(item['name']);
-	$days.text(item['days']);
-	$quantity.text(item['quantity']);
+	$days.text( tool.ifexpired(item['expire']) );
+	$quantity.text("x " + item['quantity']);
 	$del.text(item['del']);
 
-	$li.text($name + $days + $quantity + $del);
+	$li.find('.box').append($name);
+	$li.find('.box').append($quantity);
+	$li.find('.box').append($days);
+	$li.find('.box').append($del);
 	self.CTN.append($li);	
 }
 LIST_UL.prototype.deleteItem = function (item) {
 	var index = $('li').index( $(item).parent );
 	tool.remove("food", index);
+}
+LIST_UL.prototype.readItem = function () {
+	var self = this;
+	var item = tool.read("food");
+	item.forEach(function(v, i){
+		self.addItem(v);
+	});
 }
