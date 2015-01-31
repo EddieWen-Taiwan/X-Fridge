@@ -30,15 +30,16 @@ function LIST() {
 	var self = this;
 	self.UI = $('#list');
 	self.ADD = new LIST_ADD(self);
+	self.UL = new LIST_UL(self);
 	return self;
 }
 
-LIST.prototype.updateName = function () {
+LIST.prototype.xxx = function () {
 	var self = this;
 	return self;
 };
 
-LIST.prototype.updateDate = function () {
+LIST.prototype.ccc = function () {
 	var self = this;
 	return self;
 };
@@ -78,6 +79,20 @@ LIST_ADD.prototype.clearItem = function () {
 	self.food_date.val('');
 	self.food_type.val('');
 	self.food_quantity.val('');
+};
+
+function LIST_UL(parent) {
+	var self = this;
+	self.parent = parent;
+	self.UI = self.parent.UI.find('#food-list"');
+
+}
+LIST_UL.prototype.addItem = function (item) {
+	var self = this;
+	var $li = $('<li></li>');
+	var $name = $('<span></span>');
+	var $days = $('<span></span>');
+	// shipong here
 };
 $(function () {
 	start();
