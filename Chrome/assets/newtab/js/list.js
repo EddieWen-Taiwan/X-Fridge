@@ -101,6 +101,9 @@ LIST_UL.prototype.getnotice = function () {
 
 	});
 	console.log(item);
+	for (var i = item.length ; i > item.length - 5 && i >= 0 ; i--) {
+		
+	};
 };
 
 function shift(array, x, y){
