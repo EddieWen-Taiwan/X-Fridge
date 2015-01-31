@@ -324,3 +324,33 @@ body {
 	margin-bottom: 60px;
 }
 
+#notice{
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 18px;
+	display: none;
+}
+#notice_title{
+	text-align: center;
+	margin: 0px auto;
+	background-color:rgba(0, 0 ,0 , 0.7);
+	color: white;
+	font-size: 36px;
+	padding: 15px 0px;
+}
+#notice ul{
+	background-color:rgba(0, 0 ,0 , 0.4);
+	color: white;
+	padding: 20px 30px 20px 40px;
+}
+#notice ul li{
+	margin-bottom: 10px;
+	border-bottom: 1px solid white;
+	padding-bottom: 3px;
+}
+#notice ul li .date{
+	font-size: 14px;
+	float: right;
+	vertical-align: bottom;
+}

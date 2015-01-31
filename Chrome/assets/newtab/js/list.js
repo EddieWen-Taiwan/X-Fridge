@@ -101,8 +101,15 @@ LIST_UL.prototype.getnotice = function () {
 
 	});
 	console.log(item);
-	for (var i = item.length ; i > item.length - 5 && i >= 0 ; i--) {
-		
+	for (var i = item.length - 1; i > item.length - 5 && i >= 0 ; i--) {
+		var expire = new Date(item[i]['expire']);
+		var today = new Date();
+		if((expire - today) / (24*60*60*1000) < 3){
+			$('#notice').css('display', 'block');
+			var month = expire.getMonth() + 1;
+			var date = expire.getDate();
+			$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
+		}
 	};
 };
 
