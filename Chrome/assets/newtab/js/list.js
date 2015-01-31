@@ -88,7 +88,6 @@ LIST_UL.prototype.deleteItem = function (item) {
 	var index = $('li').index( $(item).parent().parent() );
 	tool.remove("food", index);
 	$(item).parent().parent().remove();
-	console.log(index);
 }
 LIST_UL.prototype.readItem = function () {
 	var self = this;
@@ -96,4 +95,29 @@ LIST_UL.prototype.readItem = function () {
 	item.forEach(function(v, i){
 		self.addItem(v);
 	});
+	self.getnotice();
 }
+LIST_UL.prototype.getnotice = function () {
+	var self = this;
+	var item = tool.read("food");
+	var rank_arr = new Array(5);
+	item.forEach(function(v, i){
+		for (var i = 5; i >= 0 && i <= 5 ; i--) {
+			if(rank_arr[i] == null || v['expire'] > rank_arr[i]['expire']){
+				console.log(v['expire']);
+				rank_arr.splice(i, 1, v['expire']);
+
+				break;
+			}	
+		};
+		self.addItem(v);
+	});
+	console.log(rank_arr);
+}
+
+function shift(array, x, y){
+	var tem = array[x];
+	array[x] = array[y];
+	array[y] = tem;
+}
+
