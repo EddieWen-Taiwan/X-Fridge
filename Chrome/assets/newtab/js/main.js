@@ -5,6 +5,7 @@ $(function () {
 		if( e.keyCode == 13 ) {
 			var name = $('#askOverlay input').val();
 			tool.write( "username", name );
+			INFO.updateName();
 		}
 	});
 

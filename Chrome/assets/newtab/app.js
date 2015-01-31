@@ -84,7 +84,7 @@ LIST_ADD.prototype.clearItem = function () {
 function LIST_UL(parent) {
 	var self = this;
 	self.parent = parent;
-	self.UI = self.parent.UI.find('#food-list"');
+	self.UI = self.parent.UI.find('#food-list');
 
 }
 LIST_UL.prototype.addItem = function (item) {
@@ -97,8 +97,12 @@ LIST_UL.prototype.addItem = function (item) {
 $(function () {
 	start();
 
-	$('#askOverlay').on( 'click', function(){
-		$(this).addClass('hidden');
+	$('#askOverlay').keypress( function(e){
+		if( e.keyCode == 13 ) {
+			var name = $('#askOverlay input').val();
+			tool.write( "username", name );
+			INFO.updateName();
+		}
 	});
 
 	function start() {

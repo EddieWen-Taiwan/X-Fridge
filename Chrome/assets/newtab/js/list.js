@@ -56,7 +56,7 @@ LIST_ADD.prototype.clearItem = function () {
 function LIST_UL(parent) {
 	var self = this;
 	self.parent = parent;
-	self.UI = self.parent.UI.find('#food-list"');
+	self.UI = self.parent.UI.find('#food-list');
 
 }
 LIST_UL.prototype.addItem = function (item) {
