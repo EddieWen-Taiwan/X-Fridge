@@ -43,10 +43,9 @@ $(function () {
 	});
 
 	function start() {
-
+console.log( IsThisFirstTime() );
 		if( IsThisFirstTime() ) {
 			askUserName();
-			
 		} else {
 			tool.tutorialStart();
 			$('#askOverlay').remove();
