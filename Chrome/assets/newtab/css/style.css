@@ -108,7 +108,7 @@ body {
 	padding: 20px;
 	background-color: rgba( 0, 0, 0, 0.75 );
 	color: white;
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 #right-part {
@@ -174,7 +174,7 @@ body {
 	padding-top: 20px;
 	max-height: 240px;
 	position: relative;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 #food-list .bu {
