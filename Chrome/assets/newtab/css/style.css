@@ -12,6 +12,12 @@ body {
 	outline: none;
 }
 
+.container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+
 .f-left {
 	float: left;
 }
@@ -30,6 +36,15 @@ body {
 	   -moz-align-items: center;
 		-ms-align-items: center;
 			align-items: center;
+}
+
+#left-part {
+	
+}
+
+#right-part {
+	background-color: blue;
+	flex: 1;
 }
 
 #info #today {
