@@ -168,8 +168,7 @@ body {
 	height: 180px;
 	color: white;
 	background-color: rgba( 0, 0, 0, 0.4 );
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: hidden;
 
 	-webkit-transition: all 0.7s;
 	   -moz-transition: all 0.7s;
