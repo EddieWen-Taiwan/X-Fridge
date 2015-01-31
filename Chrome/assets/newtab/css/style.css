@@ -146,6 +146,10 @@ body {
 	font-size: 2.5em;
 }
 
+#list {
+	position: relative;
+}
+
 #list .per {
 	margin-bottom: 10px;
 }
@@ -173,17 +177,18 @@ body {
 	margin-top: 15px;
 	padding-top: 20px;
 	max-height: 240px;
-	position: relative;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
-#food-list .bu {
+#list .bu {
 	width: 100%;
 	height: 20px;
+	background-color: #404040;
 	position: absolute;
-	top: 0px;
+	top: 225px;
 	left: 0px;
+	z-index: 10;
 }
 
 #food-list li {
@@ -195,7 +200,6 @@ body {
 #food-list .box {
 	width: 320px;
 	height: 30px;
-	/*background-color: red;*/
 	position: absolute;
 	top: 0px;
 	left: 0px;
