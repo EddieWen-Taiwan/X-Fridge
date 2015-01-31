@@ -83,7 +83,6 @@ LIST_UL.prototype.deleteItem = function (item) {
 LIST_UL.prototype.readItem = function () {
 	var self = this;
 	var item = tool.read("food");
-	console.log(item);
 	item.forEach(function(v, i){
 		self.addItem(v);
 	});
@@ -95,8 +94,11 @@ LIST_UL.prototype.getnotice = function () {
 	// var rank_arr = new Array(5);
 	item.forEach(function(v, i){
 		for (var j = 0; j <= item.length - i - 1; j++) {
-			if(item[j+1] && item[j]['expire'] > item[j+1]['expire']){
-				shift(item, i, j);
+			if(!item[j+1])break;
+			var j_expire = new Date(item[j]['expire']);
+			var j_1_expire = new Date(item[j+1]['expire']);
+			if(item[j+1] && j_expire.getTime() > j_1_expire.getTime()){
+				shift(item, j, j+1);
 			}
 			
 		};
@@ -104,22 +106,27 @@ LIST_UL.prototype.getnotice = function () {
 	});
 	console.log(item);
 	$('#notice').find('ul').empty();
-	for (var i = item.length - 1; i > item.length - 6 && i >= 0 ; i--) {
+	var notice_count = 0;
+	for (var i = 0; i <= item.length - 1; i++) {
 		var expire = new Date(item[i]['expire']);
 		var today = new Date();
 		var remain = (expire - today) / (24*60*60*1000);
-		if(remain < 3 && remain > 0){
-			console.log("almost");
-			$('#notice').css('display', 'block');
-			var month = expire.getMonth() + 1;
-			var date = expire.getDate();
-			$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
-		}else if(remain < 0){
-			console.log("expired");
-			$('#notice').css('display', 'block');
-			var month = expire.getMonth() + 1;
-			var date = expire.getDate();
-			$('#notice').find('ul').append('<li class="red"><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">(已過期)</span></li>')
+		if(notice_count < 5){
+			if(remain < 3 && remain > 0){
+				$('#notice').css('display', 'block');
+				var month = expire.getMonth() + 1;
+				var date = expire.getDate();
+				$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
+			}else if(remain < 0){
+				$('#notice').css('display', 'block');
+				var month = expire.getMonth() + 1;
+				var date = expire.getDate();
+				$('#notice').find('ul').append('<li class="red"><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">(已過期)</span></li>')
+			}
+
+			notice_count++;
+		}else{
+			break;
 		}
 	};
 };
