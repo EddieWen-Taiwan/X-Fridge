@@ -108,6 +108,7 @@ body {
 	padding: 20px;
 	background-color: rgba( 0, 0, 0, 0.75 );
 	color: white;
+	overflow: hidden;
 }
 
 #right-part {
@@ -172,7 +173,17 @@ body {
 	margin-top: 15px;
 	padding-top: 20px;
 	max-height: 240px;
+	position: relative;
 	overflow: scroll;
+}
+
+#food-list .bu {
+	width: 100%;
+	height: 20px;
+	/*background-color: */
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 #food-list li {
@@ -207,7 +218,7 @@ body {
 
 #food-list .box .days {
 	width: 20%;
-	margin-left: 5%;
+	margin-left: 2%;
 	margin-right: 10%;
 	color: #d4d4d4;
 }
