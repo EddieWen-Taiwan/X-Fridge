@@ -2,17 +2,97 @@
 <html>
 
 <head>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>HI</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script src="app.js"></script>
+
+	<title>X-Fridge</title>
+	<link rel="Shortcut Icon" type="image/png" href="favicon.png">
+
+	<link rel="stylesheet" href="libs/pure/pure-min.css">
+	<link rel="stylesheet" href="assets/newtab/css/style.css">
+	<link rel="stylesheet" href="assets/newtab/css/fridge.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="assets/newtab/app.js"></script>
+
 </head>
 
 <body>
-	<h1>HI</h1>
+	<div class="container">
+		<div id="left-part">
+			<div id="info">
+				<div class="info-title">
+					<span id="today">Today </span><span class="date"></span>
+				</div>
+				<!-- <div>
+					<span>Hello </span><span class="name"></span>
+				</div> -->
+			</div>
+			<div id="list" class="pure-form pure-form-aligned">
+				<div id="add">
+					<fieldset>
+						<div class="per pure-control-group">
+							<label>NAME: </label>
+							<input class="food_name" />
+						</div>
+						<div class="per pure-control-group">
+							<label>EXPD: </label>
+							<input class="food_date" type="date">
+						</div>
+						<div class="per pure-control-group">
+							<label>QUAN: </label>
+							<input class="food_quantity" type="number">
+						</div>
+						<div class="per pure-control-group">
+							<label>TYPE: </label>
+							<select class="food_type">
+								<option>Egg</option>
+								<option>Meat</option>
+								<option>Veg</option>
+							</select>
+						</div>
+					</fieldset>
+					<button class="add_item pure-button">Save</button>
+				</div>
+				<div id="food-list">
+					<!-- <div class="bu"></div> -->
+					<ul class="food_list">
+						<!-- <li><div class="box">
+								<div class="food">雞蛋</div>
+								<div class="num">x 5</div>	
+								<div class="days">6 days</div>
+								<div class="delete">－</div>
+						</div></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="right-part">
+			<div class="fridge">
+				<div class="fridge-up"></div>
+				<div class="fridge-down"></div>
+				<div class="fridge-down-open">
+					<div class="fridge-layers">
+						<div class="fridge-layer"></div>
+						<div class="fridge-layer"></div>
+					</div>
+					<div class="fridge-open"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="askOverlay" class="v-mid hidden">
+			<div class="wrapper">
+				<h1>What's your name?</h1>
+				<input class="get_username" placeholder="your name" />
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

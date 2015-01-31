@@ -1,0 +1,89 @@
+.fridge {
+	width: 300px;
+	height: 500px;
+	border-radius: 10px;
+	position: relative;
+	border: 5px solid black;
+	background-color: white;
+	position: absolute;
+	right: 100px;
+	top: 50px;
+	box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.fridge-up {
+	width: 100%;
+	height: 30%;
+	border-bottom: 5px solid black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.fridge-down {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 70%;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.fridge-down-open {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 70%;
+	border: 3px solid black;
+	box-sizing: border-box;
+	-webkit-transition: -webkit-transform 1000ms linear;
+	transition: transform 1000ms linear;
+	-webkit-transform-origin: right;
+	-ms-transform-origin: right;
+	transform-origin: right;
+}
+
+.fridge-layers {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: auto;
+	opacity: 0;
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+	background-color: #717171;
+}
+
+.fridge-open {
+	width: 5%;
+	height: 30%;
+	float: left;
+	margin-top: 40%;
+	margin-left: 5%;
+	background-color: #717171;
+	opacity: 1;
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+}
+
+.fridge-down-open.open {
+	-webkit-transform: rotate3d(0, 1, 0, -180deg);
+	transform: rotate3d(0, 1, 0, -180deg);
+}
+
+.fridge-down-open.open .fridge-open {
+	opacity: 0;
+}
+
+.fridge-down-open.open .fridge-layers {
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+	opacity: 1;
+}

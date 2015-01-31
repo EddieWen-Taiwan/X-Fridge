@@ -9,7 +9,7 @@ body {
 }
 
 body {
-	background-image: url('../images/pic1.jpg');
+	background-image: url('../images/b2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -109,84 +109,19 @@ body {
 
 #left-part {
 	position: absolute;
-	top: 30px;
-	left: 30px;
-}
-
-#left-part .today {
-	width: 110px;
-	font-size: 36px;
-	padding: 15px;
-	padding-left: 20px;
-	text-align: center;
-	background-color: rgba( 0, 0, 0, 0.7 );
+	top: 5vh;
+	left: 50px;
+	width: 360px;
+	height: 80vh;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgba( 0, 0, 0, 0.75 );
 	color: white;
-}
-
-#left-part .add-item,
-#left-part .my-list {
-	width: 70px;
-	margin-top: 10px;
-	font-size: 14px;
-	background-color: rgba( 0, 0, 0, 0.4 );
-	color: white;
-	display: block;
-}
-
-#left-part .add-item:hover,
-#left-part .my-list:hover {
-	background-color: rgba( 0, 0, 0, 0.7 );
-}
-
-#left-part .add-form {
-	height: 250px;
-	padding: 15px 15px;
-	color: white;
-	background-color: rgba( 0, 0, 0, 0.4 );
-	overflow: hidden;
-
-	-webkit-transition: all 0.7s;
-	   -moz-transition: all 0.7s;
-		 -o-transition: all 0.7s;
-			transition: all 0.7s;
-}
-
-#left-part .add-form.hide {
-	height: 0px;
-	padding: 0px 15px;
-}
-
-#left-part .add-form .per {
-	margin-bottom: 15px;
-}
-
-#left-part .add-form .name {
-	width: 60px;
-	text-align: right;
-	display: inline-block;
-	margin-right: 5px;
-}
-
-#left-part .add-form .per input {
-	padding: 7px 5px;
-	font-family: 'Open Sans', sans-serif;
-	border-radius: 3px;
-	border: none;
-}
-
-#left-part .add-form .per select {
-	width: 170px;
-}
-
-#left-part .add-form .save {
-	width: 100%;
-	padding: 10px 0px;
-	margin-top: 30px;
-	text-align: center;
-	display: block;
+	overflow-y: hidden;
 }
 
 #right-part {
+	/*background-color: blue;*/
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	-ms-flex: 1;
@@ -203,6 +138,114 @@ body {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+#info .info-title {
+	border-bottom: 1px #c0c0c0 solid;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+#info #today {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#info .date {
+	font-size: 2.5em;
+}
+
+#list .per {
+	margin-bottom: 10px;
+}
+
+#list .per.pure-control-group label {
+	width: 80px;
+}
+
+#list .per.pure-control-group input {
+	padding: 5px 10px;
+	width: 190px;
+}
+
+#list .per.pure-control-group select {
+	width: 190px;
+}
+
+#list #add .pure-button {
+	width: 35%;
+	margin-left: 60%;
+}
+
+#food-list {
+	border-top: 1px #c0c0c0 dashed;
+	margin-top: 15px;
+	padding-top: 20px;
+	max-height: 240px;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#food-list .bu {
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#food-list li {
+	height: 30px;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+#food-list .box {
+	width: 320px;
+	height: 30px;
+	/*background-color: red;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#food-list .box > div {
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+}
+
+#food-list .box .food {
+	width: 25%;
+}
+
+#food-list .box .num {
+	width: 10%;
+	margin-right: 10%;
+}
+
+#food-list .box .days {
+	width: 20%;
+	margin-left: 2%;
+	margin-right: 10%;
+	color: #d4d4d4;
+}
+
+#food-list .box .delete {
+	margin-left: 5%;
+	width: 24px;
+	height: 24px;
+	border-radius: 24px;
+	line-height: 24px;
+	background-color: #dcdcdc;
+	color: black;
+	cursor: pointer;
+}
+
+#food-list .box .delete:hover {
+	background-color: #e32a00;
+	color: white;
 }
 
 #askOverlay {
