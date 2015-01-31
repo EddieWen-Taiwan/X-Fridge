@@ -74,4 +74,8 @@ LIST_UL.prototype.addItem = function (item) {
 
 	$li.text($name + $days + $quantity + $del);
 	self.CTN.append($li);	
-};
+}
+LIST_UL.prototype.deleteItem = function (item) {
+	var index = $('li').index( $(item).parent );
+	tool.remove("food", index);
+}
