@@ -51,7 +51,7 @@ window.tool = {
 		}
 		switch(key){
 			case "food":
-				food_arr = splice(index, 1);
+				food_arr.splice(index, 1);
 				food = JSON.stringify(food_arr);
 				localStorage['food'] = food;
 				return true;
