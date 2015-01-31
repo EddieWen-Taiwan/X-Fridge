@@ -12,11 +12,11 @@ $(function () {
 			var thisHeight = $('#left-part .list_block').height();
 			$('#left-part .list_block').css( 'height', '0px' ).animate({
 				'height': thisHeight
-			}, 700);
+			}, 700).removeClass('hide');
 		} else {
 			list.animate({
 				'height': '0px'
-			}, 700);
+			}, 700).addClass('hide');
 		}
 	});
 
