@@ -1,7 +1,9 @@
 .fridge {
-	width:300px;
+	width: 300px;
 	height: 500px;
 	background-color: yellow;
+	border-radius: 10px;
+	position: relative;
 }
 
 .fridge-up {
@@ -11,7 +13,27 @@
 }
 
 .fridge-down {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
 	height: 70%;
 	background: white;
+}
+
+.fridge-down-open {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 70%;
+	background: gray;
+	transition: transform 500ms linear;
+	transform-origin: right;
+}
+
+.fridge-down-open:hover {
+	transform: rotate3d(0, 1, 0, 150deg);
 }
