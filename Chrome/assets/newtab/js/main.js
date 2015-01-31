@@ -56,6 +56,7 @@ $(function () {
 		window.LIST = new LIST();
 		window.FRIDGE = new FRIDGE();
 		INFO.updateName().updateDate();
+		FRIDGE.putFood();
 	}
 
 	function askUserName() {
