@@ -157,37 +157,59 @@ body {
 	padding: 0px 15px;
 }
 
+#left-part .list_block .wrapper {
+	height: 150px;
+	margin: 15px 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
 #left-part .list_block {
-	height: 0px;
+	height: 180px;
 	padding: 0px 15px;
 	color: white;
 	background-color: rgba( 0, 0, 0, 0.4 );
 	overflow-x: hidden;
 	overflow-y: auto;
+
+	-webkit-transition: all 0.7s;
+	   -moz-transition: all 0.7s;
+		 -o-transition: all 0.7s;
+			transition: all 0.7s;
+}
+
+#left-part .list_block.hide {
+	height: 0px;
+	/*padding: 0px 15px;*/
 }
 
 #left-part .list_block ul {
 	padding-left: 25px;
+	margin: 10px 0px;
 }
 
-#left-part .list_block .per > div {
+#left-part .list_block li {
+	margin-bottom: 15px;
+}
+
+#left-part .list_block .box > div {
 	display: inline-block;
 	text-align: center;
 }
 
-#left-part .list_block .per .food {
+#left-part .list_block .box .food {
 	width: 30%;
 }
 
-#left-part .list_block .per .num {
+#left-part .list_block .box .num {
 	width: 15%;
 }
 
-#left-part .list_block .per .status {
+#left-part .list_block .box .days {
 	width: 40%;
 }
 
-#left-part .list_block .per .delete {
+#left-part .list_block .box .delete {
 	width: 22px;
 	height: 22px;
 	border-radius: 22px;
@@ -196,7 +218,7 @@ body {
 	cursor: pointer;
 }
 
-#left-part .list_block .per .delete:hover {
+#left-part .list_block .box .delete:hover {
 	background-color: #e32a00;
 	color: white;
 }
