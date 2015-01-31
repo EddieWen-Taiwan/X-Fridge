@@ -327,23 +327,24 @@ body {
 
 #notice{
 	position: absolute;
-	top: 20px;
-	right: 30px;
+	top: 112px;
+	right: 165px;
 	font-size: 18px;
 	display: none;
 }
 #notice_title{
 	text-align: center;
 	margin: 0px auto;
-	background-color:rgba(0, 0 ,0 , 0.7);
+	background-color:rgba(0, 0 ,0 , 0.4);
 	color: white;
-	font-size: 36px;
+	font-size: 30px;
 	padding: 15px 0px;
 }
 #notice ul{
 	background-color:rgba(0, 0 ,0 , 0.4);
 	color: white;
 	padding: 20px 30px 20px 40px;
+	margin: 0px;
 }
 #notice ul li{
 	margin-bottom: 10px;
