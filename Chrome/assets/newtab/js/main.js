@@ -28,7 +28,7 @@ console.log( IsThisFirstTime() );
 	}
 
 	function IsThisFirstTime() {
-		return tool.read( "username" ) == "" ? true : false;
+		return !tool.read( "username" );
 	}
 
 });
