@@ -9,7 +9,9 @@ $(function () {
 
 		if( IsThisFirstTime() ) {
 			askUserName();
+			
 		} else {
+			tool.tutorialStart();
 			$('#askOverlay').remove();
 		}
 
