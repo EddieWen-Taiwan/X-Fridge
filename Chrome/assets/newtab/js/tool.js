@@ -1,5 +1,5 @@
 
-window.username = [];
+window.username = '';
 window.food = '';
 window.food_arr = [];
 
