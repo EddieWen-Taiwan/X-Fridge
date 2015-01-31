@@ -1,1 +1,2 @@
-Chrome/assets/newtab/app.js
+Chrome/assets/newtab/*.js
+Chrome/node_modules/
