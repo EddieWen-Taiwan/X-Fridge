@@ -104,11 +104,17 @@ LIST_UL.prototype.getnotice = function () {
 	for (var i = item.length - 1; i > item.length - 5 && i >= 0 ; i--) {
 		var expire = new Date(item[i]['expire']);
 		var today = new Date();
-		if((expire - today) / (24*60*60*1000) < 3){
+		var remain = (expire - today) / (24*60*60*1000);
+		if(remain < 3 && remain > 0){
 			$('#notice').css('display', 'block');
 			var month = expire.getMonth() + 1;
 			var date = expire.getDate();
 			$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
+		}else if(remain < 0){
+			$('#notice').css('display', 'block');
+			var month = expire.getMonth() + 1;
+			var date = expire.getDate();
+			$('#notice').find('ul').append('<li class="red"><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">(已過期)</span></li>')
 		}
 	};
 };

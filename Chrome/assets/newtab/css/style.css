@@ -349,6 +349,10 @@ body {
 	border-bottom: 1px solid white;
 	padding-bottom: 3px;
 }
+#notice ul li.red{
+	color: red;
+}
+
 #notice ul li .date{
 	font-size: 14px;
 	float: right;
