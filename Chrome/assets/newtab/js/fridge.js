@@ -6,7 +6,7 @@ function FRIDGE() {
 
 FRIDGE.prototype.putFood = function () {
 	var self = this;
-	var food = JSON.parse('[{"name":"牛小排","buydate":"2015-02-01","quantity":3,"expire":"2015-02-15","type":"t13"}]');
+	var food = tool.read('food');
 	var i, max = food.length;
 	self.UI.droppable({
 		drop: function(e, ui){
@@ -16,7 +16,7 @@ FRIDGE.prototype.putFood = function () {
 	for (i = 0; i < max; i += 1) {
 		var item = food[i];
 		var ele = $('<div><img><span></span></div>');
-		ele.find('img').attr('src', './assets/newtab/images/food_type/'+item.type+'.png').hover(
+		ele.find('img').attr('src', item.type).hover(
 			function(){$(this).siblings('span').show()},
 			function(){$(this).siblings('span').hide()}
 		);
