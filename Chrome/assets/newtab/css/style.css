@@ -166,7 +166,6 @@ body {
 
 #left-part .list_block {
 	height: 180px;
-	padding: 0px 15px;
 	color: white;
 	background-color: rgba( 0, 0, 0, 0.4 );
 	overflow-x: hidden;
@@ -180,7 +179,6 @@ body {
 
 #left-part .list_block.hide {
 	height: 0px;
-	/*padding: 0px 15px;*/
 }
 
 #left-part .list_block ul {
