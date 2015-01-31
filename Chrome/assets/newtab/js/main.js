@@ -1,6 +1,10 @@
 $(function () {
 	start();
 
+	$('#askOverlay').on( 'click', function(){
+		$(this).addClass('hidden');
+	});
+
 	function start() {
 
 		askUserName();
@@ -11,7 +15,7 @@ $(function () {
 	}
 
 	function askUserName() {
-		
+		$('#askOverlay').removeClass('hidden');
 	}
 
 });

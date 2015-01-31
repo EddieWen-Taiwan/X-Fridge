@@ -8,6 +8,18 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+:focus {
+	outline: none;
+}
+
+.f-left {
+	float: left;
+}
+
+.f-right {
+	float: right;
+}
+
 .v-mid {
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -36,16 +48,26 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
 
+#askOverlay.hidden {
 	display: none;
 }
 
 #askOverlay .wrapper {
 	width: 100%;
+	text-align: center;
 }
 
 #askOverlay .wrapper h1 {
 	font-size: 50px;
+	text-align: center;
+}
+
+#askOverlay .wrapper .get_username {
+	border: none;
+	border-bottom: 2px #858585 solid;
+	font-size: 32px;
 	text-align: center;
 }
 
