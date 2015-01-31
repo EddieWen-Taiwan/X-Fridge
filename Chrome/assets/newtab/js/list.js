@@ -1,6 +1,6 @@
 function LIST() {
 	var self = this;
-	self.UI = $('#list');
+	self.UI = $('#left-part');
 	self.ADD = new LIST_ADD(self);
 	self.UL = new LIST_UL(self);
 	self.UL.readItem();
@@ -47,8 +47,8 @@ LIST_ADD.prototype.clearItem = function () {
 function LIST_UL(parent) {
 	var self = this;
 	self.parent = parent;
-	self.UI = self.parent.UI.find('#food-list');
-	self.CTN = self.UI.find('.food_list');
+	self.UI = self.parent.UI.find('.my-list');
+	self.CTN = self.parent.UI.find('.list_block');
 
 	self.CTN.on('click','.delete', function(e){
 		self.deleteItem(this);
@@ -71,7 +71,7 @@ LIST_UL.prototype.addItem = function (item) {
 	$li.find('.box').append($quantity);
 	$li.find('.box').append($days);
 	$li.find('.box').append($del);
-	self.CTN.append($li);
+	self.CTN.find('.wrapper ul').append($li);
 };
 LIST_UL.prototype.deleteItem = function (item) {
 	var index = $('li').index( $(item).parent().parent() );
@@ -81,6 +81,7 @@ LIST_UL.prototype.deleteItem = function (item) {
 LIST_UL.prototype.readItem = function () {
 	var self = this;
 	var item = tool.read("food");
+	console.log(item);
 	item.forEach(function(v, i){
 		self.addItem(v);
 	});
