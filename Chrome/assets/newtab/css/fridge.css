@@ -6,12 +6,16 @@
 	background-image: url(../images/open.png);
 	background-position: center;
 	background-size: cover;
+	position: relative;
 }
 
 .fridge > div {
-	position: absolute;
+	position: absolute !important;
 	top: 150px;
 	left: 250px;
+	display: inline-block;
+	max-width: 60px;
+	
 }
 .fridge > div > img {
 	display: block;
