@@ -138,7 +138,8 @@ body {
 	background-color: rgba( 0, 0, 0, 0.7 );
 }
 
-#left-part .add-form {
+#left-part .add-form,
+#left-part .list_block {
 	height: 250px;
 	padding: 15px 15px;
 	color: white;
@@ -154,6 +155,41 @@ body {
 #left-part .add-form.hide {
 	height: 0px;
 	padding: 0px 15px;
+}
+
+#left-part .list_block ul {
+	padding-left: 25px;
+}
+
+#left-part .list_block .per > div {
+	display: inline-block;
+	text-align: center;
+}
+
+#left-part .list_block .per .food {
+	width: 30%;
+}
+
+#left-part .list_block .per .num {
+	width: 15%;
+}
+
+#left-part .list_block .per .status {
+	width: 40%;
+}
+
+#left-part .list_block .per .delete {
+	width: 22px;
+	height: 22px;
+	border-radius: 22px;
+	background-color: #c0c0c0;
+	color: black;
+	cursor: pointer;
+}
+
+#left-part .list_block .per .delete:hover {
+	background-color: #e32a00;
+	color: white;
 }
 
 #left-part .add-form .per {
