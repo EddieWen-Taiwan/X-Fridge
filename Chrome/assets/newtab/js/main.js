@@ -1,5 +1,9 @@
+var windowH;
+
 $(function () {
 	start();
+
+	windowH = $(window).height();
 
 	$('#left-part .add-item').on( 'click', function(){
 		$('#left-part .add-form').hasClass('hide') ? $('#left-part .add-form').removeClass('hide') : $('#left-part .add-form').addClass('hide');
@@ -8,11 +12,12 @@ $(function () {
 	$('#left-part .my-list').on( 'click', function(){
 		var list = $('#left-part .list_block');
 		if( list.hasClass('hide') ) {
-			$('#left-part .list_block').css( 'height', 'auto' );
-			var thisHeight = $('#left-part .list_block').height();
-			$('#left-part .list_block').css( 'height', '0px' ).animate({
+			list.css( 'height', 'auto' );
+			var thisHeight = list.height();
+			list.css( 'height', '0px' ).animate({
 				'height': thisHeight
 			}, 700).removeClass('hide');
+			$('#left-part .add-form').hasClass('hide') ? list.css( 'max-height', windowH -210 ) : list.css( 'max-height', windowH -490 );
 		} else {
 			list.animate({
 				'height': '0px'
