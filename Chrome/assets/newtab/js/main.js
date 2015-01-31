@@ -2,7 +2,8 @@ $(function () {
 	start();
 
 	function start() {
-
+console.log( tool.read( "username" ) );
+console.log( IsThisFirstTime() );
 		if( IsThisFirstTime() ) {
 			askUserName();
 		}
