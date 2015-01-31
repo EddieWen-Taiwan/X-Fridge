@@ -1,6 +1,10 @@
 $(function () {
 	start();
 
+	$('#left-part .add-item').on( 'click', function(){
+		$('#left-part .add-form').hasClass('hide') ? $('#left-part .add-form').removeClass('hide') : $('#left-part .add-form').addClass('hide');
+	});
+
 	function start() {
 
 		if( IsThisFirstTime() ) {
