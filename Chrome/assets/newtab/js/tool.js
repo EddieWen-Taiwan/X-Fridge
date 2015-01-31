@@ -1,7 +1,7 @@
 
-window.username;
-window.food;
-window.food_arr;
+window.username = [];
+window.food = '';
+window.food_arr = [];
 
 window.tool = {
 	read:function(key){

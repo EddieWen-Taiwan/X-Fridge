@@ -28,7 +28,7 @@ function LIST_ADD(parent) {
 		var self = e.data;
 		var item = {
 			name: self.food_name.val(),
-			buydate: new Date(),
+			buydate: new Date().stringFormat(),
 			expire: self.food_date.val(),
 			quantity: self.food_quantity.val(),
 			type: self.food_type.val()

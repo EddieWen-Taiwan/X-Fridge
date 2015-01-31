@@ -1,3 +1,9 @@
+Date.prototype.stringFormat = function () {
+	var y = this.getFullYear();
+	var m = this.getMonth() + 1;
+	var d = this.getDate();
+	return y + "-" + m + "-" + "d";
+};
 function INFO() {
 	var self = this;
 	self.UI = $('#info');
@@ -49,7 +55,7 @@ function LIST_ADD(parent) {
 		var self = e.data;
 		var item = {
 			name: self.food_name.val(),
-			buydate: new Date(),
+			buydate: new Date().stringFormat(),
 			expire: self.food_date.val(),
 			quantity: self.food_quantity.val(),
 			type: self.food_type.val()
@@ -76,15 +82,23 @@ $(function () {
 	start();
 
 	function start() {
+
+		askUserName();
+
 		window.INFO = new INFO();
 		window.LIST = new LIST();
 		INFO.updateName().updateDate();
 	}
-})
 
-window.username;
-window.food;
-window.food_arr;
+	function askUserName() {
+		
+	}
+
+});
+
+window.username = [];
+window.food = '';
+window.food_arr = [];
 
 window.tool = {
 	read:function(key){
@@ -143,4 +157,12 @@ window.tool = {
 		}
 	}
 
+}
+
+function supportLocalStorage(){
+	if(!localStorage){
+		return false;
+	}else{
+		return true;
+	}
 }
