@@ -1,8 +1,11 @@
 $(function () {
 	start();
 
-	$('#askOverlay').on( 'click', function(){
-		$(this).addClass('hidden');
+	$('#askOverlay').keypress( function(e){
+		if( e.keyCode == 13 ) {
+			var name = $('#askOverlay').val();
+			console.log( name );
+		}
 	});
 
 	function start() {
