@@ -25,34 +25,42 @@
 	<div class="container">
 		<div id="left-part">
 			<div id="info">
-				<div>
+				<div class="info-title">
 					<span id="today">Today </span><span class="date"></span>
 				</div>
-				<div>
+				<!-- <div>
 					<span>Hello </span><span class="name"></span>
-				</div>
+				</div> -->
 			</div>
-			<div id="list">
+			<div id="list" class="pure-form pure-form-aligned">
 				<div id="add">
-					<div>
-						<span>NAME: </span>
-						<input class="food_name">
-						</span>
-					</div>
-					<div>
-						<span>EXPD: <input class="food_date" type="date"></span>
-					</div>
-					<div>
-						<span>QUAN: <input class="food_quantity" type="number"></span>
-					</div>
-					<div>
-						<span>TYPE: <select class="food_type"><option>Egg</option><option>Meat</option><option>Veg</option></select></span>
-					</div>
-					<button class="add_item">Save</button>
+					<fieldset>
+						<div class="per pure-control-group">
+							<label>NAME: </label>
+							<input class="food_name" />
+						</div>
+						<div class="per pure-control-group">
+							<label>EXPD: </label>
+							<input class="food_date" type="date">
+						</div>
+						<div class="per pure-control-group">
+							<label>QUAN: </label>
+							<input class="food_quantity" type="number">
+						</div>
+						<div class="per pure-control-group">
+							<label>TYPE: </label>
+							<select class="food_type">
+								<option>Egg</option>
+								<option>Meat</option>
+								<option>Veg</option>
+							</select>
+						</div>
+					</fieldset>
+					<button class="add_item pure-button">Save</button>
 				</div>
 				<div id="food-list">
 					<ul class="food_list">
-
+						<li></li>
 					</ul>
 				</div>
 			</div>

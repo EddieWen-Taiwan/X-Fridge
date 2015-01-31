@@ -99,11 +99,19 @@ body {
 }
 
 #left-part {
-	
+	position: absolute;
+	top: 13vh;
+	left: 50px;
+	width: 360px;
+	height: 74vh;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: rgba( 0, 0, 0, 0.75 );
+	color: white;
 }
 
 #right-part {
-	background-color: blue;
+	/*background-color: blue;*/
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	-ms-flex: 1;
@@ -122,6 +130,12 @@ body {
 	align-items: center;
 }
 
+#info .info-title {
+	border-bottom: 1px #c0c0c0 solid;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
 #info #today {
 	font-size: 3em;
 	font-weight: bold;
@@ -129,6 +143,28 @@ body {
 
 #info .date {
 	font-size: 2.5em;
+}
+
+#list .per {
+	margin-bottom: 10px;
+}
+
+#list .per.pure-control-group label {
+	width: 80px;
+}
+
+#list .per.pure-control-group select {
+	width: 190px;
+}
+
+#list #add .pure-button {
+	width: 35%;
+	margin-left: 55%;
+}
+
+#food-list {
+	border-top: 1px #c0c0c0 dashed;
+	margin-top: 15px;
 }
 
 #askOverlay {
