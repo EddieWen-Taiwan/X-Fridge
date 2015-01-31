@@ -190,6 +190,7 @@ body {
 #left-part .list_block .box > div {
 	display: inline-block;
 	text-align: center;
+	line-height: 20px;
 }
 
 #left-part .list_block .box .food {
@@ -205,9 +206,9 @@ body {
 }
 
 #left-part .list_block .box .delete {
-	width: 22px;
-	height: 22px;
-	border-radius: 22px;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
 	background-color: #c0c0c0;
 	color: black;
 	cursor: pointer;
