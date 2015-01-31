@@ -143,7 +143,8 @@ body {
 	padding: 15px 15px;
 	color: white;
 	background-color: rgba( 0, 0, 0, 0.4 );
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 
 	-webkit-transition: all 0.7s;
 	   -moz-transition: all 0.7s;
@@ -161,7 +162,8 @@ body {
 	padding: 0px 15px;
 	color: white;
 	background-color: rgba( 0, 0, 0, 0.4 );
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 #left-part .list_block ul {
