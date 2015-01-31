@@ -30,8 +30,26 @@
 	width: 100%;
 	height: 70%;
 	background: gray;
-	transition: transform 500ms linear;
+	-webkit-transition: -webkit-transform 1000ms linear;
+	transition: transform 1000ms linear;
+	-webkit-transform-origin: right;
+	-ms-transform-origin: right;
 	transform-origin: right;
+}
+
+.fridge-layers {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: auto;
+	opacity: 0;
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+	background-color: yellow;
 }
 
 .fridge-open {
@@ -41,8 +59,22 @@
 	margin-top: 40%;
 	margin-left: 5%;
 	background-color: yellow;
+	opacity: 1;
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
 }
 
 .fridge-down-open.open {
-	transform: rotate3d(0, 1, 0, 150deg);
+	-webkit-transform: rotate3d(0, 1, 0, -180deg);
+	transform: rotate3d(0, 1, 0, -180deg);
+}
+
+.fridge-down-open.open .fridge-open {
+	opacity: 0;
+}
+
+.fridge-down-open.open .fridge-layers {
+	-webkit-transition: opacity 1000ms linear;
+	transition: opacity 1000ms linear;
+	opacity: 1;
 }
