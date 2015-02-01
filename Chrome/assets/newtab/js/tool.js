@@ -90,7 +90,7 @@ window.tool = {
 					tool.remove('food', index);
 					return 0;
 				}else{
-					alert('數字輸入有誤');
+					return '數字輸入有誤';
 				}
 			break;
 			default:

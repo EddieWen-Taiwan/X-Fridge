@@ -94,8 +94,10 @@ LIST_UL.prototype.deleteItem = function (index, quantity) {
 	var quantity = tool.update("quantity", index, quantity_obj);
 	if(quantity == 0){
 		$('.list_block').find('.wrapper').find('ul').find('li').eq(index).remove();
+	}else if(!isNaN(quantity)){
+		$('.list_block').find('.wrapper').find('ul').find('li').eq(index).find('.num').text("x "+quantity);
 	}else{
-		$('.list_block').find('.wrapper').find('ul').find('li').eq(index).find('.num').text(quantity);
+		alert(quantity);
 	}
 };
 LIST_UL.prototype.readItem = function () {
