@@ -26,7 +26,6 @@ function LIST_ADD(parent) {
 			type: self.food_type.attr('src')
 		};
 		self.addItem(item);
-		self.parent.LIST_UL.getnotice();
 	});
 	return self;
 }
@@ -51,9 +50,24 @@ function LIST_UL(parent) {
 	self.parent = parent;
 	self.UI = self.parent.UI.find('.my-list');
 	self.CTN = self.parent.UI.find('.list_block');
+	self.DEL = self.parent.UI.parent().find('#confirm');
 
 	self.CTN.on('click','.delete', function(e){
-		self.reduceItem(this);
+		$('#reduce').fadeIn('fast');
+		var index = $('li').index( $(this).parent().parent() );
+		$('#confirm .yes').attr('alt', index);
+	})
+	self.DEL.on('click','.yes', function(e){
+		var val = $('#reduce input').val();
+		val = parseInt(val);
+		var index = $(this).attr('alt');
+		self.deleteItem(index, val);
+		$('#confirm .yes').attr('alt', -1);
+		$('#reduce').fadeOut('fast');
+	})
+	self.DEL.on('click','.cancel', function(e){
+		$('#confirm .yes').attr('alt', -1);
+		$('#reduce').fadeOut('fast');
 	})
 }
 LIST_UL.prototype.addItem = function (item) {
@@ -75,15 +89,14 @@ LIST_UL.prototype.addItem = function (item) {
 	$li.find('.box').append($del);
 	self.CTN.find('.wrapper ul').append($li);
 };
-LIST_UL.prototype.reduceItem = function (item) {
-	var index = $('li').index( $(item).parent().parent() );
-	tool.remove("food", index);
-	$(item).parent().parent().remove();
-};
-LIST_UL.prototype.deleteItem = function (item) {
-	var index = $('li').index( $(item).parent().parent() );
-	tool.remove("food", index);
-	$(item).parent().parent().remove();
+LIST_UL.prototype.deleteItem = function (index, quantity) {
+	var quantity_obj = {quantity:quantity};
+	var quantity = tool.update("quantity", index, quantity_obj);
+	if(quantity == 0){
+		$('.list_block').find('.wrapper').find('ul').find('li').eq(index).remove();
+	}else{
+		$('.list_block').find('.wrapper').find('ul').find('li').eq(index).find('.num').text(quantity);
+	}
 };
 LIST_UL.prototype.readItem = function () {
 	var self = this;

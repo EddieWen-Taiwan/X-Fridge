@@ -360,3 +360,37 @@ body {
 	float: right;
 	vertical-align: bottom;
 }
+#reduce{
+	width: 200px;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 200px;
+	left: 276px;
+	z-index: 999;
+	color: white;
+	position: absolute;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	padding: 20px;
+	display: none;
+}
+#reduce .title{
+	margin-bottom: 10px;
+	margin: 0px auto;
+	text-align: center;
+}
+#reduce input{
+	padding: 7px 5px;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 3px;
+	border: none;
+	margin: 0px auto;
+	margin-top: 20px;
+	width: 190px;
+	margin-bottom: 15px;
+}
+#reduce #confirm{
+	margin-top: 20px;
+	margin: 0px auto;
+	text-align: center;
+}
