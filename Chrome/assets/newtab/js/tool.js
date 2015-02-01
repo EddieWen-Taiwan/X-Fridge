@@ -96,7 +96,16 @@ tool.tutorialStart = function () {
 	});
 };
 
-
+tool.getDiffDays = function (from, to) {
+	if (typeof from === 'string')
+		from = new Date(from);
+	if (typeof to === 'string')
+		to = new Date(to);
+	
+	var diffS = to.getTime() - from.getTime();
+	d = diffS/1000/60/60/24;
+	return d;
+};
 function supportLocalStorage(){
 	if(!localStorage){
 		return false;

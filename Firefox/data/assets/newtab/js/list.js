@@ -1,21 +1,11 @@
 function LIST() {
 	var self = this;
-	self.UI = $('#list');
+	self.UI = $('#left-part');
 	self.ADD = new LIST_ADD(self);
 	self.UL = new LIST_UL(self);
 	self.UL.readItem();
 	return self;
 }
-
-LIST.prototype.xxx = function () {
-	var self = this;
-	return self;
-};
-
-LIST.prototype.ccc = function () {
-	var self = this;
-	return self;
-};
 
 function LIST_ADD(parent) {
 	var self = this;
@@ -33,9 +23,10 @@ function LIST_ADD(parent) {
 			buydate: new Date().stringFormat(),
 			expire: self.food_date.val(),
 			quantity: self.food_quantity.val(),
-			type: self.food_type.val()
+			type: self.food_type.attr('src')
 		};
 		self.addItem(item);
+		self.parent.LIST_UL.getnotice();
 	});
 	return self;
 }
@@ -45,21 +36,25 @@ LIST_ADD.prototype.addItem = function (item) {
 	tool.write('food', item);
 	self.clearItem();
 	self.parent.UL.addItem(item);
+	FRIDGE.putItem(item);
 };
 LIST_ADD.prototype.clearItem = function () {
 	var self = this;
 	self.food_name.val('');
 	self.food_date.val('');
-	self.food_type.val('');
+	self.food_type.attr('src','assets/newtab/images/food_type/t1.png');
 	self.food_quantity.val('');
-
 };
 
 function LIST_UL(parent) {
 	var self = this;
 	self.parent = parent;
-	self.UI = self.parent.UI.find('#food-list');
-	self.CTN = self.UI.find('.food_list');
+	self.UI = self.parent.UI.find('.my-list');
+	self.CTN = self.parent.UI.find('.list_block');
+
+	self.CTN.on('click','.delete', function(e){
+		self.deleteItem(this);
+	})
 }
 LIST_UL.prototype.addItem = function (item) {
 	var self = this;
@@ -78,16 +73,68 @@ LIST_UL.prototype.addItem = function (item) {
 	$li.find('.box').append($quantity);
 	$li.find('.box').append($days);
 	$li.find('.box').append($del);
-	self.CTN.append($li);	
-}
+	self.CTN.find('.wrapper ul').append($li);
+};
 LIST_UL.prototype.deleteItem = function (item) {
-	var index = $('li').index( $(item).parent );
+	var index = $('li').index( $(item).parent().parent() );
 	tool.remove("food", index);
-}
+	$(item).parent().parent().remove();
+};
 LIST_UL.prototype.readItem = function () {
 	var self = this;
 	var item = tool.read("food");
 	item.forEach(function(v, i){
 		self.addItem(v);
 	});
+	self.getnotice();
+};
+LIST_UL.prototype.getnotice = function () {
+	var self = this;
+	var item = tool.read("food");
+	// var rank_arr = new Array(5);
+	item.forEach(function(v, i){
+		for (var j = 0; j <= item.length - i - 1; j++) {
+			if(!item[j+1])break;
+			var j_expire = new Date(item[j]['expire']);
+			var j_1_expire = new Date(item[j+1]['expire']);
+			if(item[j+1] && j_expire.getTime() > j_1_expire.getTime()){
+				shift(item, j, j+1);
+			}
+			
+		};
+
+	});
+	console.log(item);
+	$('#notice').find('ul').empty();
+	var notice_count = 0;
+	for (var i = 0; i <= item.length - 1; i++) {
+		var expire = new Date(item[i]['expire']);
+		var today = new Date();
+		var remain = (expire - today) / (24*60*60*1000);
+		if(notice_count < 5){
+			if(remain < 3 && remain > 0){
+				$('#notice').css('display', 'block');
+				var month = expire.getMonth() + 1;
+				var date = expire.getDate();
+				$('#notice').find('ul').append('<li><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">('+month+'/'+date+')</span></li>')
+			}else if(remain < 0){
+				$('#notice').css('display', 'block');
+				var month = expire.getMonth() + 1;
+				var date = expire.getDate();
+				$('#notice').find('ul').append('<li class="red"><span class="name">'+item[i]['name']+'</span>&nbsp;<span class="date">(已過期)</span></li>')
+			}
+
+			notice_count++;
+		}else{
+			break;
+		}
+	};
+};
+
+function shift(array, x, y){
+	var tem = array[x];
+	array[x] = array[y];
+	array[y] = tem;
+	return array;
 }
+

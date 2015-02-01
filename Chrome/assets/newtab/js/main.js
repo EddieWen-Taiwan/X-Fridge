@@ -33,10 +33,10 @@ $(function () {
 		if( IsThisFirstTime() ) {
 			askUserName();
 		} else {
-			tool.tutorialStart();
+//			tool.tutorialStart();
 			$('#askOverlay').remove();
 		}
-
+		getToday();
 		window.INFO = new INFO();
 		window.LIST = new LIST();
 		window.FRIDGE = new FRIDGE();
