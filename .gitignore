@@ -1,5 +1,3 @@
-Chrome/assets/newtab/*.js
 Chrome/node_modules/
 
-Firefox/data/assets/newtab/*.js
 Firefox/data/node_modules/
