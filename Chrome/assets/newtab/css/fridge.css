@@ -46,12 +46,37 @@
 	animation: dying 1s infinite;
 }
 
+.fridge .modal {
+	top: 120px;
+	left: 120px;
+	background: #a0a0a0;
+	max-width: 100px;
+	height: 95px;
+	border: 2px dotted black;
+}
+
+.fridge .modal * {
+	font-size: 1.2em;
+	color: white;
+}
+.fridge .modal .name-ctn {
+	margin-bottom: 1em;
+}
+
 @-webkit-keyframes dying {
-	from {opacity: 0;}
-	to {opacity: 1;}
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes dying {
-	from {opacity: 0;}
-	to {opacity: 1;}
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

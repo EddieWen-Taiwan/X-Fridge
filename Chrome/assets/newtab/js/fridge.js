@@ -20,6 +20,7 @@ FRIDGE.prototype.putFood = function () {
 			});
 		}
 	});
+	self.UI.on('click', '.item', self ,self.openDetail);
 	for (i = 0; i < max; i += 1) {
 		var item = food[i];
 		self.createItem(item, i);
@@ -31,7 +32,7 @@ FRIDGE.prototype.putItem = function (item) {
 };
 FRIDGE.prototype.createItem = function (item, index) {
 	var self = this;
-	var ele = $('<div><span class="health"></span><img><span class="name"></span></div>');
+	var ele = $('<div class="item"><span class="health"></span><img><span class="name"></span></div>');
 	if (item.top && item.left)
 		ele.css({
 			"top": item.top,
@@ -49,11 +50,23 @@ FRIDGE.prototype.createItem = function (item, index) {
 	var exp = item.expire;
 	var now = new Date().stringFormat();
 	var buy = item.buydate;
-	var perc = tool.getDiffDays(now,exp) / tool.getDiffDays(buy, exp);
-	if(perc < 0.3)
+	var perc = tool.getDiffDays(now, exp) / tool.getDiffDays(buy, exp);
+	if (perc < 0.3)
 		ele.addClass('dying');
-	ele.find('span.health').width(perc*100+"%");
+	ele.find('span.health').width(perc * 100 + "%");
 	ele.find('span.name').text(item.name);
 	ele.draggable();
 	self.UI.append(ele);
+	ele.data('item', item);
+};
+FRIDGE.prototype.openDetail = function (e) {
+	var self = e.data
+	self.UI.find('.modal').remove();
+	var $self = $(this);
+	var item = $self.data('item');
+	var modal = $('<div class="modal"><div class="name-ctn"><span class="name"></span>*<span class="quan"></span></div><div class="expire"></div></div>');
+	modal.find('.name').text(item.name);
+	modal.find('.quan').text(item.quantity);
+	modal.find('.expire').html('EXPR: <br>'+item.expire);
+	modal.appendTo(self.UI);
 };
