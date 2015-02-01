@@ -15,6 +15,10 @@ body {
 	background-position: center;
 }
 
+html, button, input, select, textarea {
+	font-family: 'Open Sans', sans-serif;
+}
+
 :focus {
 	outline: none;
 }
