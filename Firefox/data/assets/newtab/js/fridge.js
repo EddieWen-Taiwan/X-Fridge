@@ -4,10 +4,11 @@ function FRIDGE() {
 	return self;
 }
 
-FRIDGE.prototype.putFood = function () {
+FRIDGE.prototype.putFood = function (arr) {
 	var self = this;
-	var food = tool.read('food');
-	var i, max = food.length;
+	var food = arr || tool.read('food');
+	var i,
+		max = food.length;
 	self.UI.droppable({
 		drop: function (e, ui) {
 			var ele = ui.draggable;
