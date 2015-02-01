@@ -80,6 +80,11 @@ window.tool = {
 				localStorage['food'] = food;
 				return true;
 			break;
+			case "quantity":
+				food_arr[index]['quantity'] = boj['quantity'];
+				food = JSON.stringify(food_arr);
+				localStorage['food'] = food;
+			break;
 			default:
 				return false;
 			break;

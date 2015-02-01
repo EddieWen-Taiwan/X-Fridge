@@ -53,7 +53,7 @@ function LIST_UL(parent) {
 	self.CTN = self.parent.UI.find('.list_block');
 
 	self.CTN.on('click','.delete', function(e){
-		self.deleteItem(this);
+		self.reduceItem(this);
 	})
 }
 LIST_UL.prototype.addItem = function (item) {
@@ -74,6 +74,11 @@ LIST_UL.prototype.addItem = function (item) {
 	$li.find('.box').append($days);
 	$li.find('.box').append($del);
 	self.CTN.find('.wrapper ul').append($li);
+};
+LIST_UL.prototype.reduceItem = function (item) {
+	var index = $('li').index( $(item).parent().parent() );
+	tool.remove("food", index);
+	$(item).parent().parent().remove();
 };
 LIST_UL.prototype.deleteItem = function (item) {
 	var index = $('li').index( $(item).parent().parent() );
