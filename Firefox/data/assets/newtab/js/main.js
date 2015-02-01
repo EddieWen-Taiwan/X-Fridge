@@ -12,6 +12,7 @@ $(function () {
 	$('#left-part .my-list').on( 'click', function(){
 		$('#left-part .list_block').hasClass('hide') ? $('#left-part .list_block').removeClass('hide') : $('#left-part .list_block').addClass('hide');
 	});
+	$('.food_date').datepicker();
 	
 	var types_container =  $('#left-part .food_types');
 	for(var i = 1; i < 25; i+=1){

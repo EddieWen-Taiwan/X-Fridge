@@ -81,9 +81,17 @@ window.tool = {
 				return true;
 			break;
 			case "quantity":
-				food_arr[index]['quantity'] = boj['quantity'];
-				food = JSON.stringify(food_arr);
-				localStorage['food'] = food;
+				if(food_arr[index]['quantity'] > obj['quantity']){
+					food_arr[index]['quantity'] -= obj['quantity'];
+					food = JSON.stringify(food_arr);
+					localStorage['food'] = food;
+					return food_arr[index]['quantity'];
+				}else if(food_arr[index]['quantity'] == obj['quantity']){
+					tool.remove('food', index);
+					return 0;
+				}else{
+					return '數字輸入有誤';
+				}
 			break;
 			default:
 				return false;

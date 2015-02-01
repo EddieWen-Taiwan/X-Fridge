@@ -19,3 +19,5 @@ INFO.prototype.updateDate = function () {
 	self.date.text(now.getMonth() + 1 + "/" + now.getDate());
 	return self;
 };
+
+$('.food_date').datepicker();
