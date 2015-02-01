@@ -30,18 +30,18 @@ $(function () {
 	});
 
 	function start() {
-		if( IsThisFirstTime() ) {
-			askUserName();
-		} else {
-//			tool.tutorialStart();
-			$('#askOverlay').remove();
-		}
-		getToday();
 		window.INFO = new INFO();
 		window.LIST = new LIST();
 		window.FRIDGE = new FRIDGE();
+		if( IsThisFirstTime() ) {
+			askUserName();
+			tool.tutorialStart();
+		} else {
+			$('#askOverlay').remove();
+			FRIDGE.putFood();
+		}
+		getToday();
 		INFO.updateName().updateDate();
-		FRIDGE.putFood();
 	}
 
 	function getToday() {
@@ -64,7 +64,7 @@ $(function () {
 				tool.write( "username", name );
 				INFO.updateName();
 
-				$(this).addClass('animated bounceOut');
+				$(this).addClass('animated bounceOut hide');
 				// $(this).remove();
 			}
 		});

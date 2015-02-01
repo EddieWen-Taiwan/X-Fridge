@@ -90,10 +90,9 @@ window.tool = {
 };
 
 tool.tutorialStart = function () {
-	$('<div class="step1"></div>').appendTo($('#left-part'));
-	$('#left-part .add-item').on( 'click', function(){
-		$('.step1').remove();
-	});
+	var temp = '[{"name":"雞蛋","buydate":"2015-01-10","expire":"2015-02-19","quantity":"10","type":"assets/newtab/images/food_type/t6.png","top":"344px","left":"164px"},{"name":"牛","buydate":"2015-02-01","expire":"2015-02-28","quantity":"2","type":"assets/newtab/images/food_type/t13.png","top":"431px","left":"88px"},{"name":"蔬菜","buydate":"2015-02-01","expire":"2015-02-07","quantity":"2","type":"assets/newtab/images/food_type/t17.png","top":"336px","left":"82px"},{"name":"可樂","buydate":"2015-02-01","expire":"2015-02-11","quantity":"1","type":"assets/newtab/images/food_type/t1.png","top":"325px","left":"266px"},{"name":"鮮魚","buydate":"2015-02-01","expire":"2015-02-05","quantity":"1","type":"assets/newtab/images/food_type/t14.png","top":"242px","left":"114px"},{"name":"潛艇堡","buydate":"2015-02-01","expire":"2015-02-17","quantity":"1","type":"assets/newtab/images/food_type/t8.png","top":"236px","left":"204px"},{"name":"大西瓜","buydate":"2015-02-01","expire":"2015-02-15","quantity":"1","type":"assets/newtab/images/food_type/t19.png","top":"430px","left":"171px"},{"name":"米塔蛋糕","buydate":"2015-01-20","expire":"2015-02-02","quantity":"1","type":"assets/newtab/images/food_type/t10.png","top":"423px","left":"276px"}]';
+	food_arr = JSON.parse(temp);
+	FRIDGE.putFood(food_arr);
 };
 
 tool.getDiffDays = function (from, to) {
