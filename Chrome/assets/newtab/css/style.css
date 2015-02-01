@@ -169,8 +169,6 @@ body {
 	overflow: hidden;
 
 	-webkit-transition: all 0.7s;
-	   -moz-transition: all 0.7s;
-		 -o-transition: all 0.7s;
 			transition: all 0.7s;
 }
 
@@ -301,10 +299,13 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	-webkit-transition: visibility 1s linear;
+	transition: visibility 1s linear;
+	visibility: visible;
 }
 
-#askOverlay.hidden {
-	display: none;
+#askOverlay.hide {
+	visibility: hidden;
 }
 
 #askOverlay .wrapper {
@@ -323,6 +324,7 @@ body {
 	font-size: 32px;
 	text-align: center;
 	margin-bottom: 60px;
+	background-color: transparent;
 }
 
 #notice{
