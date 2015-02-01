@@ -1,8 +1,8 @@
 {
-  "name": "my-addon",
-  "title": "my-addon",
+  "name": "x-fridge",
+  "title": "X-Fridge",
   "id": "jid1-KQpaB8YeACrzWQ",
-  "description": "a basic add-on",
+  "description": "A extension for food management",
   "author": "",
   "license": "MPL 2.0",
   "version": "0.1"
