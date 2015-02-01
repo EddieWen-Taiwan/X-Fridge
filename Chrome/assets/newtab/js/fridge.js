@@ -7,7 +7,8 @@ function FRIDGE() {
 FRIDGE.prototype.putFood = function () {
 	var self = this;
 	var food = tool.read('food');
-	var i, max = food.length;
+	var i,
+		max = food.length;
 	self.UI.droppable({
 		drop: function (e, ui) {
 			var ele = ui.draggable;
